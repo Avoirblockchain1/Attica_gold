@@ -13,14 +13,7 @@ namespace attica_gold.Controllers
         {
             return View();
         }
-        public ActionResult admin()
-        {
-            return View();
-        }
-        public ActionResult cse()
-        {
-            return View();
-        }
+        
         public ActionResult Validate()
         {
 
@@ -29,11 +22,11 @@ namespace attica_gold.Controllers
 
             
             if (String.Equals(userName, "admin") && String.Equals(password, "admin")) {
-                Response.Redirect("admin");
+                Response.Redirect("/Admin/Index");
             }
             else if (String.Equals(userName, "cse") && String.Equals(password, "cse"))
             {
-                Response.Redirect("cse");
+                Response.Redirect("/Cse/Index");
             }
             else
             {
