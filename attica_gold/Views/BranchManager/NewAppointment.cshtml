@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "NewAppointment";
+    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+}
+
+<form>
+    <div class="form-group">
+        <label for="inputEmail">UID</label>
+        <input type="text" class="form-control" id="uid" placeholder="UID">
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Data</label>
+        <input type="date" class="form-control" id="date" placeholder="Date">
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Time</label>
+        <input type="text" class="form-control" id="time" placeholder="Time">
+    </div>
+    
+    <button type="submit" class="btn btn-primary" onclick="window.location.href = '/Appointment';">Confirm</button>
+</form>
+

@@ -208,6 +208,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BranchController.cs" />
+    <Compile Include="Controllers\BranchManagerController.cs" />
     <Compile Include="Controllers\CseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -292,7 +293,14 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Branch\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Price\Index.cshtml" />
+=======
+    <Content Include="Views\Shared\_BranchManagerLayout.cshtml" />
+    <Content Include="Views\BranchManager\Index.cshtml" />
+    <Content Include="Views\BranchManager\Appointment.cshtml" />
+    <Content Include="Views\BranchManager\NewAppointment.cshtml" />
+>>>>>>> 80bfed0251093fb349b4bb32deddb342b4af5dd8
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
