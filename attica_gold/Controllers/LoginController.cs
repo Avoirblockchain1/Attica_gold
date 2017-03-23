@@ -28,6 +28,10 @@ namespace attica_gold.Controllers
             {
                 Response.Redirect("/Cse/Index");
             }
+            else if (String.Equals(userName, "branchmanager") && String.Equals(password, "branchmanager"))
+            {
+                Response.Redirect("/BranchManager/Index");
+            }
             else
             {
                 Response.Redirect("index");
