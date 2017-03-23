@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Attica_gold
 #for login
   1. git init
@@ -21,3 +22,6 @@
   2. git checkout -b newbranchname 
   3. git push origin newbranchname
  
+=======
+#sdasdasd Attica_goldsdfasdfasfasdfasd
+>>>>>>> 0887bac9335d01a9aa04d333fe104db45feb6768
