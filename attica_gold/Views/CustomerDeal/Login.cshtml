@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+}
+
+<form>
+    <div class="form-group">
+        <label for="formGroupExampleInput">User ID</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="User ID">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Mobile Number</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Mobile Number">
+    </div>
+    <button type="button" class="btn btn-success" onclick="window.location.href = 'OTPValidation';" >Submit</button>
+    <small class="form-text text-muted">you will get an OTP on the above number.</small>
+</form>

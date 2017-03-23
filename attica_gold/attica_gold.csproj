@@ -211,6 +211,7 @@
     <Compile Include="Controllers\BranchManagerController.cs" />
     <Compile Include="Controllers\CseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\CustomerDealController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -296,6 +297,12 @@
     <Content Include="Views\BranchManager\Index.cshtml" />
     <Content Include="Views\BranchManager\Appointment.cshtml" />
     <Content Include="Views\BranchManager\NewAppointment.cshtml" />
+    <Content Include="Views\CustomerDeal\Login.cshtml" />
+    <Content Include="Views\CustomerDeal\OTPValidation.cshtml" />
+    <Content Include="Views\CustomerDeal\DocumentSubmit.cshtml" />
+    <Content Include="Views\CustomerDeal\SubmitForm.cshtml" />
+    <Content Include="Views\CustomerDeal\Receipt.cshtml" />
+    <Content Include="Views\CustomerDeal\FeedbackForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
