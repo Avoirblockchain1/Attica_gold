@@ -6,13 +6,13 @@
   
 #For download
   1. login 
-  2. git clone <the link of the project>
+  2. git clone "the link of the project"
   
 #For update and add new modules
   1. git pull origin development
   2. start adding/modified the existing code
   3. git status //for check what you have changed
-  4. git add <filename> or . //to add new file you have created
+  4. git add "filename or . "//to add new file you have created
   5. git commit -am "comment about what you did"
   6. git push origin development or branch which your working on
  
