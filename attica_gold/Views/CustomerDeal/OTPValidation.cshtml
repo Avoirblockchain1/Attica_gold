@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "OTPValidation";
+    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+}
+
+<h2>OTPValidation</h2>
+<form>
+    <div class="form-group">
+        <label for="formGroupExampleInput">User ID</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="User ID" disabled>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Mobile Number</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Mobile Number" disabled>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">OTP</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="OTP">
+    </div>
+    <button type="button" class="btn btn-success" onclick="window.location.href = 'DocumentSubmit';">Submit</button>
+    
+</form>

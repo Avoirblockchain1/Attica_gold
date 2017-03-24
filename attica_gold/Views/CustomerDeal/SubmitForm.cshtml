@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "SubmitForm";
+    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+}
+
+<h2>SubmitForm</h2>
+
+<form>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Material</label>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="materialtype">
+            <option selected>Choose...</option>
+            <option value="1">Gold</option>
+            <option value="2">Silver</option>
+            <option value="3">Dimond</option>
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Weight in gram</label>
+        <input type="text" class="form-control" id="weight" placeholder="weight in Gram">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">purity</label>
+        <input type="text" class="form-control" id="purity" placeholder="Purity">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Gross Price</label>
+        <input type="text" class="form-control" id="grossprice" placeholder="Grossprice">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Our margin</label>
+        <input type="text" class="form-control" id="margin" placeholder="Margin">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Net Amount</label>
+        <input type="text" class="form-control" id="netamount" placeholder="Amount">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Total Amount</label>
+        <input type="text" class="form-control" id="totalamount" placeholder="Total Amount">
+    </div>
+    <button type="button" class="btn btn-success" onclick="window.location.href='Receipt'">Submit</button>
+    <small class="form-text text-muted">you will get an OTP on the above number.</small>
+</form>
