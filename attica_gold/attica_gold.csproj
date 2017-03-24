@@ -303,6 +303,8 @@
     <Content Include="Views\CustomerDeal\SubmitForm.cshtml" />
     <Content Include="Views\CustomerDeal\Receipt.cshtml" />
     <Content Include="Views\CustomerDeal\FeedbackForm.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

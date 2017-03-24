@@ -13,5 +13,28 @@ namespace attica_gold.Controllers
         {
             return View();
         }
+        public ActionResult Show()
+        {
+            return View();
+        }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        public ActionResult Edit()
+        {
+            return View();
+        }
+        public ActionResult Delete()
+        {
+            return View();
+        }
+        public ActionResult Update()
+        {
+            return View();
+        }
+
+
+
     }
 }
