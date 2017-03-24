@@ -22,15 +22,15 @@ namespace attica_gold.Controllers
 
             
             if (String.Equals(userName, "admin") && String.Equals(password, "admin")) {
-                Response.Redirect("/Admin/Index");
+                Response.Redirect("/profile/Admin/Index");
             }
             else if (String.Equals(userName, "cse") && String.Equals(password, "cse"))
             {
-                Response.Redirect("/Cse/Index");
+                Response.Redirect("/profile/Cse/Index");
             }
             else if (String.Equals(userName, "branchmanager") && String.Equals(password, "branchmanager"))
             {
-                Response.Redirect("/BranchManager/Index");
+                Response.Redirect("/profile/BranchManager/Index");
             }
             else
             {
