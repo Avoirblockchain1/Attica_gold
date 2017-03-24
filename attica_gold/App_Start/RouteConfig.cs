@@ -31,8 +31,8 @@ namespace attica_gold
 
             routes.MapRoute(
                 name: "BranchManager",
-                url: "profile/{controller}/{action}/{id}",
-                defaults: new { controller = "BranchManager", action = "Index", id = UrlParameter.Optional }
+                url: "profile/{controller}/{name}/{action}/{id}",
+                defaults: new { controller = "BranchManager",name=UrlParameter.Optional, action = "Index", id = UrlParameter.Optional }
             );
 
 
