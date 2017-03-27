@@ -13,7 +13,12 @@ namespace attica_gold
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            
+            //coustomer 
+            routes.MapRoute(
+                name: "customer",
+                url: "profile/{role}/customer/{Id}",
+                defaults: new { controller = "Customer", action = "Index", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Admin",
