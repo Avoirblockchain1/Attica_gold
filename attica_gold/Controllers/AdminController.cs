@@ -13,5 +13,13 @@ namespace attica_gold.Controllers
         {
             return View();
         }
+
+     /*   public ActionResult Index(String uname)
+        {
+            Response.Redirect("/profile/Admin/uname/Index");
+
+            return Content("Exception Occues");
+        }
+        */
     }
 }

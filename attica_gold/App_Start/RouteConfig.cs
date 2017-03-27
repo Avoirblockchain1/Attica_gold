@@ -15,11 +15,13 @@ namespace attica_gold
 
             
 
-            routes.MapRoute(
-                name: "Admin",
-                url: "profile/{controller}/{action}/{id}",
-                defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
+         /*   routes.MapRoute(
+                name: "ProfileRole",
+                url: "profile/{role}/{action}/{id}",
+                defaults: new { controller = "role",  action = "Index", id = UrlParameter.Optional }
             );
+
+            */
 
 
             routes.MapRoute(
@@ -28,14 +30,34 @@ namespace attica_gold
                 defaults: new { controller = "Cse", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+               name: "admin",
+               url: "profile/{controller}/{action}/{id}",
+               defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
+           );
+
 
             routes.MapRoute(
                 name: "BranchManager",
-                url: "profile/{controller}/{name}/{action}/{id}",
-                defaults: new { controller = "BranchManager",name=UrlParameter.Optional, action = "Index", id = UrlParameter.Optional }
+                url: "profile/{controller}/{action}/{id}",
+                defaults: new { controller = "BranchManager", action = "Index", id = UrlParameter.Optional }
             );
 
 
+            routes.MapRoute(
+                name: "csebranch",
+                url: "profile/Cse/{controller}/{action}/{id}",
+                defaults: new { controller = "Branch", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "csecustomer",
+                url: "profile/cse/{controller}/{action}/{id}",
+                defaults: new { controller = "Customer", action = "Index", id = UrlParameter.Optional }
+            );
+
+
+          
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
