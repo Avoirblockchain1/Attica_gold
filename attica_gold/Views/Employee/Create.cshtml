@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "AddCustomer";
+    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+}
+<style>
+    body {
+    background-color: #eee;
+}
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+
+</style>
+
+    <div class="col-lg-12 well">
+        Registration Form
+    </div>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form action="/store" method="post">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="Enter First Name Here.." class="form-control" name="first_name">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Middle Name</label>
+                                <input type="text" placeholder="Enter Middle Name Here.." class="form-control" name="middle_name">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Enter Last Name Here.." class="form-control" name="last_name">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <label>City</label>
+                                <input type="text" placeholder="Enter City Name Here.." class="form-control" name="city">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>State</label>
+                                <input type="text" placeholder="Enter State Name Here.." class="form-control" name="state">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>PIN code</label>
+                                <input type="text" placeholder="Enter Zip Code Here.." class="form-control" name="pin">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>Email</label>
+                                <input type="text" placeholder="Enter Designation Here.." class="form-control" name="email">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Gender</label>
+                                <div class="radio">
+                                    <label><input type="radio" name="gender" value="f">Female</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="gender" value="m">Male</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Enter Phone Number Here.." class="form-control" name="phone">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Enter Alternate Phone Number Here.." class="form-control" name="alternate_number">
+                                </div>
+
+                            </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                                <select class="form-control" id="sel1">
+                                    <option>Manager</option>
+                                    <option>Custmer Support executive</option>
+                                    <option>Developer</option>
+                                    <option>Xyz </option>
+                                </select>
+                            
+                        </div>
+                        
+                        <button type="button" class="btn btn-lg btn-info">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
