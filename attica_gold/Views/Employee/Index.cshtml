@@ -1,0 +1,61 @@
+﻿@model IEnumerable<attica_gold.Models.EmployeeViewModels>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CseLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-11">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>
+                        Employee Details
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-success" onclick="window.location.href = 'employee/Create';">Add New Employee</button>
+                        </div>                    
+                       
+                    </h3>
+                    
+                </div>
+                <div class="panel-body">
+                    <div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>@Html.DisplayFor(model => item.id)</td>
+                                    <td>@Html.DisplayFor(model => item.Name)</td>
+                                    <td>@Html.DisplayFor(model => item.City)</td>
+                                    <td>@Html.DisplayFor(model => item.email)</td>
+                                    <td>
+                                        <button type="button" class="btn btn-info" onclick="window.location.href = 'employee/Show/@Html.DisplayFor(model => item.id)';">View</button>
+                                        <button type="button" class="btn btn-warning">Edit</button>
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                }
+                                
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    
+        
+</div>
+
