@@ -32,19 +32,19 @@ namespace attica_gold.Controllers
 
             if (String.Equals(userName, "admin") && String.Equals(password, "admin"))
             {
-                Response.Redirect("/profile/Admin/Index");
+                Response.Redirect("/profile/Admin");
             }
             else if (String.Equals(userName, "cse") && String.Equals(password, "cse"))
             {
-                Response.Redirect("/profile/Cse/Index");
+                Response.Redirect("/profile/Cse");
             }
             else if (String.Equals(userName, "branchmanager") && String.Equals(password, "branchmanager"))
             {
-                Response.Redirect("/profile/BranchManager/Index");
+                Response.Redirect("/profile/BranchManager");
             }
             else
             {
-                Response.Redirect("index");
+                Response.Redirect("/Login");
             }
             return Content("Exception Occues");
  

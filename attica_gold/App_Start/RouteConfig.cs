@@ -53,19 +53,38 @@ namespace attica_gold
                );
 
           */
-            
+            routes.MapRoute(
+                 name: "appointmnt",
+                 url: "profile/BranchManager/Appointment",
+                   defaults: new { controller = "BranchManager", action = "Appointment" }
+             );
+            routes.MapRoute(
+                name: "newappointmnt",
+                url: "profile/BranchManager/NewAppointment",
+                  defaults: new { controller = "BranchManager", action = "NewAppointment" }
+            );
+
 
             routes.MapRoute(
 
                name: "profilerole",
-               url: "profile/{controller}/{action}",
+               url: "profile/{controller}",
                defaults: new {  action = "Index" }
            );
 
             routes.MapRoute(
                  name: "roleitem",
-                 url: "profile/{role}/{controller}/{action}"
+                 url: "profile/{role}/{controller}",
+                   defaults: new { action = "Index" }
              );
+
+            routes.MapRoute(
+                 name: "roleitemlogin",
+                 url: "profile/{role}/{controller}/{action}",
+                   defaults: new {controller="CustomerDeal", action = "Login" }
+             );
+
+            
 
 
             routes.MapRoute(

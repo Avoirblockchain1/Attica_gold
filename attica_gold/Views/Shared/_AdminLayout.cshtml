@@ -402,7 +402,7 @@
                                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
                                 <li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
                                 <li class="divider"></li>
-                                <li><a href="/Login/Index"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                                <li><a href="/Login"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
                             </ul>
                         </li>
 
@@ -411,22 +411,30 @@
             </nav>
             <aside id="side-menu" class="aside" role="navigation">
                 <ul class="nav nav-list accordion">
-                    <li class="nav-header">
+                    <li class="nav-header"  onclick="window.location.href = '/profile/Admin';">
                         <div class="link"><i class="fa fa-lg fa-globe"></i><span class="glyphicon glyphicon-dashboard"></span> Dashboard<i class="fa fa-chevron-down"></i></div>
                     </li>
 
-                    <li class="nav-header">
+                    <li class="nav-header"  onclick="window.location.href = '/profile/Admin/Branch';">
                         <div class="link"><i class="fa fa-lg fa-globe"></i><span class="glyphicon glyphicon-option-vertical"></span> Branch<i class="fa fa-chevron-down"></i></div>
                     </li>
 
-                    <li class="nav-header">
-                        <div class="link"><i class="fa fa-lg fa-users"></i><span class="glyphicon glyphicon-user"></span> Customers<i class="fa fa-chevron-down"></i></div>
-                        
+                    <li class="nav-header" onclick="window.location.href = '/profile/Admin/Customer';" >
+                        <div class="link"><i class="fa fa-lg fa-users"></i><span class="glyphicon glyphicon-user"></span> Customer Calls<i class="fa fa-chevron-down"></i></div>
+                      </li>
+
+
+                    <li class="nav-header" onclick="window.location.href = '/profile/Admin/CustomerDeal/Login';">
+                        <div class="link"><i class="fa fa-lg fa-users"></i><span class="glyphicon glyphicon-user"></span> Customer Deals<i class="fa fa-chevron-down"></i></div>
                     </li>
-                    <li class="nav-header">
+
+                         
+
+           <!--         <li class="nav-header"  onclick="window.location.href = '/profile/Admin/BranchManager/Appointment';">
                         <div class="link"><i class="fa fa-lg fa-users"></i><span class="glyphicon glyphicon-book"></span> Appointment<i class="fa fa-chevron-down"></i></div>
 
                     </li>
+                    -->
 
                    
                     <li class="nav-header">

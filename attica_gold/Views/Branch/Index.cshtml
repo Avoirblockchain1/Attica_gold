@@ -1,20 +1,28 @@
 ﻿
-@{<!--
-    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"].ToString();
+@{
+    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
     string layout = "";
-    if (controller == "BranchManager")
+
+     layout = "~/Views/Shared/_"+controller+"Layout.cshtml";
+  <!----  if (controller == "BranchManager")
     {
         layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
     }
-    else
+    else if (controller == "Cse")
     {
         layout = "~/Views/Shared/_CseLayout.cshtml";
     }
+    else
+    {
+        layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    }
+      -->
     Layout = layout;
 
-    -->
+    <!--
  ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_CseLayout.cshtml";
+    Layout = "~/Views/Shared/_CseLayout.cshtml";-->
 }
 
 <div class="container">
