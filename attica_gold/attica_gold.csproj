@@ -312,6 +312,8 @@
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\Show.cshtml" />
+    <Content Include="Views\Branch\create.cshtml" />
+    <Content Include="Views\Branch\show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
