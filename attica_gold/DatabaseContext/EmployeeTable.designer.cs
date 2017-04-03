@@ -93,7 +93,7 @@ namespace attica_gold.DatabaseContext
 		
 		private int _id;
 		
-		private System.Nullable<int> _employee_id;
+		private string _employee_id;
 		
 		private string _first_name;
 		
@@ -133,7 +133,7 @@ namespace attica_gold.DatabaseContext
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
-    partial void Onemployee_idChanging(System.Nullable<int> value);
+    partial void Onemployee_idChanging(string value);
     partial void Onemployee_idChanged();
     partial void Onfirst_nameChanging(string value);
     partial void Onfirst_nameChanged();
@@ -193,8 +193,8 @@ namespace attica_gold.DatabaseContext
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="Int")]
-		public System.Nullable<int> employee_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="NVarChar(50)")]
+		public string employee_id
 		{
 			get
 			{
@@ -567,7 +567,7 @@ namespace attica_gold.DatabaseContext
 		
 		private int _id;
 		
-		private System.Nullable<int> _employee_id;
+		private string _employee_id;
 		
 		private System.Data.Linq.Binary _photo;
 		
@@ -589,7 +589,7 @@ namespace attica_gold.DatabaseContext
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
-    partial void Onemployee_idChanging(System.Nullable<int> value);
+    partial void Onemployee_idChanging(string value);
     partial void Onemployee_idChanged();
     partial void OnphotoChanging(System.Data.Linq.Binary value);
     partial void OnphotoChanged();
@@ -631,8 +631,8 @@ namespace attica_gold.DatabaseContext
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="Int")]
-		public System.Nullable<int> employee_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="NVarChar(50)")]
+		public string employee_id
 		{
 			get
 			{
@@ -802,7 +802,7 @@ namespace attica_gold.DatabaseContext
 					}
 					else
 					{
-						this._employee_id = default(Nullable<int>);
+						this._employee_id = default(string);
 					}
 					this.SendPropertyChanged("tblEmployee");
 				}

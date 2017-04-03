@@ -3,7 +3,7 @@
   <Table Name="dbo.tblEmployees" Member="tblEmployees">
     <Type Name="tblEmployee">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="employee_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="employee_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="first_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="gender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -25,7 +25,7 @@
   <Table Name="dbo.tblEmployeeDocuments" Member="tblEmployeeDocuments">
     <Type Name="tblEmployeeDocument">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="employee_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="employee_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="adhar_card" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="pan_card" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />

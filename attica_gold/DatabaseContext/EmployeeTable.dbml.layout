@@ -2,23 +2,23 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EmployeeTable">
   <DataContextMoniker Name="/EmployeeTableDataContext" />
   <nestedChildShapes>
-    <classShape Id="1b105079-b254-41c8-8650-114fb27292ae" absoluteBounds="0.5, 0.5, 2, 4.0785139973958326">
+    <classShape Id="fa07bd60-afd6-4a32-b8d5-d939722b9741" absoluteBounds="0.5, 0.5, 2, 4.0785139973958326">
       <DataClassMoniker Name="/EmployeeTableDataContext/tblEmployee" />
       <nestedChildShapes>
-        <elementListCompartment Id="ed55b320-3973-4efd-adfc-db33d44fd019" absoluteBounds="0.515, 0.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1c3bab3a-bfab-42d1-a030-2acab359c02f" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4650c351-df32-4cb1-b30c-e70bfc8ca583" absoluteBounds="3, 0.75, 2, 2.3478011067708335">
+    <classShape Id="9ce10673-2e24-4583-99f0-52e162969b33" absoluteBounds="3.125, 0.75, 2, 2.3478011067708335">
       <DataClassMoniker Name="/EmployeeTableDataContext/tblEmployeeDocument" />
       <nestedChildShapes>
-        <elementListCompartment Id="e1d9bc2a-9f1b-41a6-be04-16414ed272c2" absoluteBounds="3.015, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2585763c-285c-497b-b098-5cc5ead3ef62" absoluteBounds="3.1399999999999997, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 1.92390055338542); (3 : 1.92390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 1.92390055338542); (3.125 : 1.92390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/EmployeeTableDataContext/tblEmployee/tblEmployee_tblEmployeeDocument" />
       <nodes>
-        <classShapeMoniker Id="1b105079-b254-41c8-8650-114fb27292ae" />
-        <classShapeMoniker Id="4650c351-df32-4cb1-b30c-e70bfc8ca583" />
+        <classShapeMoniker Id="fa07bd60-afd6-4a32-b8d5-d939722b9741" />
+        <classShapeMoniker Id="9ce10673-2e24-4583-99f0-52e162969b33" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

@@ -44,6 +44,7 @@ namespace attica_gold.Controllers
             var date = thisDay.ToString("g");
 
             tblEmployee emps = new tblEmployee();
+            emps.employee_id = Request["employee_id"];
             emps.first_name = Request["first_name"];
             emps.last_name = Request["last_name"];
             emps.gender = Request["gender"];
@@ -63,9 +64,19 @@ namespace attica_gold.Controllers
             db.tblEmployees.InsertOnSubmit(emps);
             db.SubmitChanges();
 
-            return Content("sucessfull");
+            Response.Redirect("index");
+            return View();
         }
 
+        public ActionResult show(int id)
+        {
+            var query = from empdata in db.tblEmployees
+                        where empdata.id == id
+                        select empdata;
+            var employees = query.ToList();
+            ViewBag.employeedata = employees;
+            return View();
+        }
 
         public ActionResult delete()
         {
