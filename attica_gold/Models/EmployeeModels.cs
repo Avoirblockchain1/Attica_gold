@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace attica_gold.Models
 {
 
-    [Table("tblEmployees")]
+    [Table("tblEmployee")]
     public class EmployeeModels
     {
         [Key]

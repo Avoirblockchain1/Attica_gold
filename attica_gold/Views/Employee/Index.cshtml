@@ -31,15 +31,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in model)
+                                @foreach (var item in ViewBag.employeedata)
                                 {
                                 <tr>
-                                    <td>@Html.DisplayFor(model => item.id)</td>
-                                    <td>@Html.DisplayFor(model => item.firstname)</td>
-                                    <td>@Html.DisplayFor(model => item.lastname)</td>
-                                    <td>@Html.DisplayFor(model => item.mail_id)</td>
+                                    <td>@item.id</td>
+                                    <td>@item.lastname</td>
+                                    <td>@item.mail_id</td>
+                                    <td>@item.id</td>
+                                   
                                     <td>
-                                        <button type="button" class="btn btn-info" onclick="window.location.href = 'employee/Show/@Html.DisplayFor(model => item.id)';">View</button>
+                                        
                                         <button type="button" class="btn btn-warning">Edit</button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </td>

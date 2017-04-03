@@ -23,7 +23,7 @@ namespace attica_gold
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AtticagoldDB")]
-	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
+	public partial class EmployeeTableDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -33,33 +33,36 @@ namespace attica_gold
     partial void InserttblEmployee(tblEmployee instance);
     partial void UpdatetblEmployee(tblEmployee instance);
     partial void DeletetblEmployee(tblEmployee instance);
+    partial void InserttblEmployeeDocument(tblEmployeeDocument instance);
+    partial void UpdatetblEmployeeDocument(tblEmployeeDocument instance);
+    partial void DeletetblEmployeeDocument(tblEmployeeDocument instance);
     #endregion
 		
-		public DataClasses1DataContext() : 
+		public EmployeeTableDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["AtticagoldDB"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(string connection) : 
+		public EmployeeTableDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(System.Data.IDbConnection connection) : 
+		public EmployeeTableDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public EmployeeTableDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public EmployeeTableDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -70,6 +73,14 @@ namespace attica_gold
 			get
 			{
 				return this.GetTable<tblEmployee>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblEmployeeDocument> tblEmployeeDocuments
+		{
+			get
+			{
+				return this.GetTable<tblEmployeeDocument>();
 			}
 		}
 	}
@@ -114,6 +125,8 @@ namespace attica_gold
 		
 		private System.Nullable<System.DateTime> _deletedat;
 		
+		private EntitySet<tblEmployeeDocument> _tblEmployeeDocuments;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -156,6 +169,7 @@ namespace attica_gold
 		
 		public tblEmployee()
 		{
+			this._tblEmployeeDocuments = new EntitySet<tblEmployeeDocument>(new Action<tblEmployeeDocument>(this.attach_tblEmployeeDocuments), new Action<tblEmployeeDocument>(this.detach_tblEmployeeDocuments));
 			OnCreated();
 		}
 		
@@ -495,6 +509,302 @@ namespace attica_gold
 					this._deletedat = value;
 					this.SendPropertyChanged("deletedat");
 					this.OndeletedatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployee_tblEmployeeDocument", Storage="_tblEmployeeDocuments", ThisKey="employee_id", OtherKey="employee_id")]
+		public EntitySet<tblEmployeeDocument> tblEmployeeDocuments
+		{
+			get
+			{
+				return this._tblEmployeeDocuments;
+			}
+			set
+			{
+				this._tblEmployeeDocuments.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblEmployeeDocuments(tblEmployeeDocument entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblEmployee = this;
+		}
+		
+		private void detach_tblEmployeeDocuments(tblEmployeeDocument entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblEmployee = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEmployeeDocuments")]
+	public partial class tblEmployeeDocument : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _employee_id;
+		
+		private System.Data.Linq.Binary _photo;
+		
+		private System.Data.Linq.Binary _adhar_card;
+		
+		private System.Data.Linq.Binary _pan_card;
+		
+		private System.Nullable<System.DateTime> _createdat;
+		
+		private System.Nullable<System.DateTime> _modifiedat;
+		
+		private System.Nullable<System.DateTime> _deletedat;
+		
+		private EntityRef<tblEmployee> _tblEmployee;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onemployee_idChanging(System.Nullable<int> value);
+    partial void Onemployee_idChanged();
+    partial void OnphotoChanging(System.Data.Linq.Binary value);
+    partial void OnphotoChanged();
+    partial void Onadhar_cardChanging(System.Data.Linq.Binary value);
+    partial void Onadhar_cardChanged();
+    partial void Onpan_cardChanging(System.Data.Linq.Binary value);
+    partial void Onpan_cardChanged();
+    partial void OncreatedatChanging(System.Nullable<System.DateTime> value);
+    partial void OncreatedatChanged();
+    partial void OnmodifiedatChanging(System.Nullable<System.DateTime> value);
+    partial void OnmodifiedatChanged();
+    partial void OndeletedatChanging(System.Nullable<System.DateTime> value);
+    partial void OndeletedatChanged();
+    #endregion
+		
+		public tblEmployeeDocument()
+		{
+			this._tblEmployee = default(EntityRef<tblEmployee>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="Int")]
+		public System.Nullable<int> employee_id
+		{
+			get
+			{
+				return this._employee_id;
+			}
+			set
+			{
+				if ((this._employee_id != value))
+				{
+					if (this._tblEmployee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onemployee_idChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id = value;
+					this.SendPropertyChanged("employee_id");
+					this.Onemployee_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_photo", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary photo
+		{
+			get
+			{
+				return this._photo;
+			}
+			set
+			{
+				if ((this._photo != value))
+				{
+					this.OnphotoChanging(value);
+					this.SendPropertyChanging();
+					this._photo = value;
+					this.SendPropertyChanged("photo");
+					this.OnphotoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_adhar_card", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary adhar_card
+		{
+			get
+			{
+				return this._adhar_card;
+			}
+			set
+			{
+				if ((this._adhar_card != value))
+				{
+					this.Onadhar_cardChanging(value);
+					this.SendPropertyChanging();
+					this._adhar_card = value;
+					this.SendPropertyChanged("adhar_card");
+					this.Onadhar_cardChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pan_card", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary pan_card
+		{
+			get
+			{
+				return this._pan_card;
+			}
+			set
+			{
+				if ((this._pan_card != value))
+				{
+					this.Onpan_cardChanging(value);
+					this.SendPropertyChanging();
+					this._pan_card = value;
+					this.SendPropertyChanged("pan_card");
+					this.Onpan_cardChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createdat", DbType="DateTime")]
+		public System.Nullable<System.DateTime> createdat
+		{
+			get
+			{
+				return this._createdat;
+			}
+			set
+			{
+				if ((this._createdat != value))
+				{
+					this.OncreatedatChanging(value);
+					this.SendPropertyChanging();
+					this._createdat = value;
+					this.SendPropertyChanged("createdat");
+					this.OncreatedatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modifiedat", DbType="DateTime")]
+		public System.Nullable<System.DateTime> modifiedat
+		{
+			get
+			{
+				return this._modifiedat;
+			}
+			set
+			{
+				if ((this._modifiedat != value))
+				{
+					this.OnmodifiedatChanging(value);
+					this.SendPropertyChanging();
+					this._modifiedat = value;
+					this.SendPropertyChanged("modifiedat");
+					this.OnmodifiedatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deletedat", DbType="DateTime")]
+		public System.Nullable<System.DateTime> deletedat
+		{
+			get
+			{
+				return this._deletedat;
+			}
+			set
+			{
+				if ((this._deletedat != value))
+				{
+					this.OndeletedatChanging(value);
+					this.SendPropertyChanging();
+					this._deletedat = value;
+					this.SendPropertyChanged("deletedat");
+					this.OndeletedatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployee_tblEmployeeDocument", Storage="_tblEmployee", ThisKey="employee_id", OtherKey="employee_id", IsForeignKey=true)]
+		public tblEmployee tblEmployee
+		{
+			get
+			{
+				return this._tblEmployee.Entity;
+			}
+			set
+			{
+				tblEmployee previousValue = this._tblEmployee.Entity;
+				if (((previousValue != value) 
+							|| (this._tblEmployee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblEmployee.Entity = null;
+						previousValue.tblEmployeeDocuments.Remove(this);
+					}
+					this._tblEmployee.Entity = value;
+					if ((value != null))
+					{
+						value.tblEmployeeDocuments.Add(this);
+						this._employee_id = value.employee_id;
+					}
+					else
+					{
+						this._employee_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tblEmployee");
 				}
 			}
 		}

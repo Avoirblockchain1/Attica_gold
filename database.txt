@@ -1,0 +1,95 @@
+create table tblEmployees
+(
+id int identity(1,1) primary key,
+employee_id int  unique,
+first_name nvarchar(50) ,
+last_name nvarchar(50) ,
+gender nvarchar(50) ,
+mobile_number varchar(10) unique ,
+alter_mobile_number varchar(10) ,
+email nvarchar(50),
+street nvarchar(50) ,
+city nvarchar(50) ,
+[state] nvarchar(50) ,
+pin nvarchar(50) ,
+permanet_address nvarchar(100) ,
+employee_role nvarchar(50) ,
+createdat datetime,
+modifiedat datetime ,
+deletedat datetime
+)
+
+
+
+
+create table tblLogin
+(
+id int identity(1,1) primary key,
+username nvarchar(50) ,
+user_password nvarchar(50) ,
+Constraint FK_id foreign key(id) references tblEmployee(id),
+createdat datetime,
+modifiedat datetime ,
+deletedat datetime
+)
+
+
+
+CREATE TABLE tblCustomers
+(
+id int identity(1,1) primary key,
+name nvarchar(50) ,
+mobile_number varchar(10) unique ,
+alter_mobile_number varchar(10) ,
+mail_id nvarchar(50),
+street nvarchar(50) ,
+city nvarchar(50) ,
+[state] nvarchar(50) ,
+pin nvarchar(50) ,
+permanet_address nvarchar(100),
+createdat datetime,
+modifiedat datetime ,
+deletedat datetime
+)
+
+
+
+create table tblBankDetails
+(
+id int identity(1,1) primary key,
+employee_id int ,
+bank_name nvarchar(50) ,
+account_number nvarchar(50) ,
+ifsc_code nvarchar(50) 
+Constraint FK_BankDetails_Employee foreign key(employee_id) references tblEmployee(employee_id),
+createdat datetime,
+modifiedat datetime ,
+deletedat datetime
+)
+
+
+create table tblCallrecords
+(
+id int identity(1,1) primary key ,
+employee_id int ,
+customer_id int ,
+[timestamp] nvarchar(50) ,
+Constraint FK_Callrecord_Employee foreign key(employee_id) references tblEmployee(employee_id),
+createdat datetime ,
+modifiedat datetime ,
+deletedat datetime 
+)
+
+
+create table tblEmployeeDocuments
+(
+id int identity(1,1) primary key ,
+employee_id int ,
+photo image ,
+adhar_card image ,
+pan_card image ,
+Constraint FK_EmployeeDocuments_Employee foreign key(employee_id) references tblEmployee(employee_id),
+createdat datetime ,
+modifiedat datetime ,
+deletedat datetime 
+)

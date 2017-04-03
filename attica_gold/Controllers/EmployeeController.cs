@@ -16,13 +16,17 @@ namespace attica_gold.Controllers
 
         public ActionResult index()
         {
-            var query = from empdata in db.tblEmployees
+            //return Content("index page");
+            var query = from empdata in db.tblEmployee
                         select empdata;
             var employees = query.ToList();
 
-            return View(employees);
-            //string json = Newtonsoft.Json.JsonConvert.SerializeObject(employee);
+           // string json = Newtonsoft.Json.JsonConvert.SerializeObject(employees);
             //return Content(json);
+           
+            ViewBag.employeedata = employees;
+            return View();
+
 
 
         }
@@ -30,6 +34,9 @@ namespace attica_gold.Controllers
         public ActionResult create()
         {
             return View();
+
+
+
         }
 
         [HttpPost]
