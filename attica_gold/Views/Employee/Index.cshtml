@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_CseLayout.cshtml";
 }
 
-<div class="container">
     <div class="row">
         <div class="col-md-11">
             <div class="panel panel-default">
@@ -12,11 +11,9 @@
                     
                         Employee Details
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success" onclick="window.location.href = 'employee/Create';">Add New Employee</button>
+                            <button type="button" class="btn btn-success" onclick="window.location.href = 'Create';">Add New Employee</button>
                         </div>                    
                        
-                   
-                    
                 </div>
                 <div class="panel-body">
                     <div>
@@ -34,13 +31,13 @@
                                 @foreach (var item in ViewBag.employeedata)
                                 {
                                 <tr>
-                                    <td>@item.id</td>
-                                    <td>@item.lastname</td>
-                                    <td>@item.mail_id</td>
-                                    <td>@item.id</td>
+                                    <td>@item.employee_id</td>
+                                    <td>@item.first_name</td>
+                                    <td>@item.last_name</td>
+                                    <td>@item.email</td>
                                    
                                     <td>
-                                        
+                                        <button type="button" class="btn btn-info" >View</button>
                                         <button type="button" class="btn btn-warning">Edit</button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </td>
@@ -55,8 +52,5 @@
             </div>
         </div>
     </div>
-    <hr />
-    
-        
-</div>
+
 

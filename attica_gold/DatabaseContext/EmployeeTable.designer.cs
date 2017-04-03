@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace attica_gold
+namespace attica_gold.DatabaseContext
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -85,7 +85,7 @@ namespace attica_gold
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEmployee")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEmployees")]
 	public partial class tblEmployee : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
