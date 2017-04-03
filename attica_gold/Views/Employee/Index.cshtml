@@ -37,9 +37,9 @@
                                     <td>@item.email</td>
                                    
                                     <td>
-                                        <button type="button" class="btn btn-info" >View</button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        <button type="button" class="btn btn-info" onclick="window.location.href = '/employee/show/@item.id';">View</button>
+                                        <button type="button" class="btn btn-warning" onclick="window.location.href = '/employee/edit/@item.id';">Edit</button>
+                                        <button type="button" class="btn btn-danger" onclick="validate(@item.id)">Delete</button>
                                     </td>
                                 </tr>
                                 }
@@ -54,3 +54,13 @@
     </div>
 
 
+<script>
+
+    function validate(id) 
+    {
+        var result = confirm("Want to delete?");
+        if (result) {
+            window.location.href ="/employee/delete/"+id;
+          }
+    }
+</script>

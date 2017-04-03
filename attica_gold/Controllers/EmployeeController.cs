@@ -64,30 +64,71 @@ namespace attica_gold.Controllers
             db.tblEmployees.InsertOnSubmit(emps);
             db.SubmitChanges();
 
-            Response.Redirect("index");
+            Response.Redirect("/employee/index");
             return View();
         }
 
         public ActionResult show(int id)
         {
-            var query = from empdata in db.tblEmployees
-                        where empdata.id == id
-                        select empdata;
-            var employees = query.ToList();
+            var query = (from empdata in db.tblEmployees
+                         where empdata.id == id
+                         select empdata);
+            var employees = query.FirstOrDefault();
             ViewBag.employeedata = employees;
+
+           //string json = Newtonsoft.Json.JsonConvert.SerializeObject(employees);
+           //return Content(json);
+
             return View();
         }
 
-        public ActionResult delete()
+        public ActionResult delete(int id)
         {
+           var query = (from empdata in db.tblEmployees
+                         where empdata.id == id
+                         select empdata).Single();
+            db.tblEmployees.DeleteOnSubmit(query);
+            db.SubmitChanges();
+            Response.Redirect("/employee/index");
             return View();
         }
-        public ActionResult edit()
+        public ActionResult edit(int id)
         {
+            var query = (from empdata in db.tblEmployees
+                         where empdata.id == id
+                         select empdata);
+            var employees = query.FirstOrDefault();
+            ViewBag.employeedata = employees;
             return View();
         }
         public ActionResult update()
         {
+            int id = Convert.ToInt32(Request["id"]);
+         
+            var query = (from empdata in db.tblEmployees
+                         where empdata.id == id
+                         select empdata);
+            var employee = query.FirstOrDefault();
+            
+            employee.employee_id = Request["employee_id"];
+            employee.first_name = Request["first_name"];
+            employee.last_name = Request["last_name"];
+            employee.gender = Request["gender"];
+            employee.mobile_number = Request["phone"];
+            employee.alter_mobile_number = Request["alternate_phone"];
+            employee.email = Request["email"];
+            employee.street = Request["street"];
+            employee.city = Request["city"];
+            employee.state = Request["state"];
+            employee.pin = Request["pin"];
+            employee.permanet_address = "perment address";
+            employee.employee_role = Request["role"];
+            employee.createdat = null;
+            employee.modifiedat = null;
+            employee.deletedat = null;
+
+            db.SubmitChanges();
+            Response.Redirect("/employee/index");
             return View();
         }
 
