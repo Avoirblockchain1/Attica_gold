@@ -64,6 +64,11 @@ namespace attica_gold.Controllers
             db.tblEmployees.InsertOnSubmit(emps);
             db.SubmitChanges();
 
+            tblEmployeeDocument empsdoc = new tblEmployeeDocument();
+            
+            empsdoc.photo = 
+            empsdoc.adhar_card =
+            empsdoc.pan_card = 
             Response.Redirect("/employee/index");
             return View();
         }
