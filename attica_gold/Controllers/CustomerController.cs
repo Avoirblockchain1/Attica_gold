@@ -10,7 +10,10 @@ namespace attica_gold.Controllers
     {
         // GET: Customer
         public ActionResult Index()
+
         {
+           // return Redirect("/profile/cse/Customer/Index");
+      //     Response.Redirect("/profile/cse/Customer/Index");
             return View();
         }
         public ActionResult Show()

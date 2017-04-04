@@ -1,7 +1,15 @@
 ﻿
 @{
-    ViewBag.Title = "DocumentSubmit";
+   <!---- ViewBag.Title = "DocumentSubmit";
     Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+-->
+    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
+    string layout = "";
+
+    layout = "~/Views/Shared/_" + controller + "Layout.cshtml";
+    Layout = layout;
+
+
 }
 
 <center></center>><h2>DocumentSubmit</h2></center>

@@ -1,7 +1,13 @@
 ﻿
-@{
+@{<!----
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";-->
+var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
+string layout = "";
+
+layout = "~/Views/Shared/_" + controller + "Layout.cshtml";
+Layout = layout;
+
 }
 
 <form>
