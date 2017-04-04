@@ -65,10 +65,10 @@ namespace attica_gold.Controllers
             db.SubmitChanges();
 
             tblEmployeeDocument empsdoc = new tblEmployeeDocument();
-            
-            empsdoc.photo = 
-            empsdoc.adhar_card =
-            empsdoc.pan_card = 
+
+            empsdoc.photo = null;
+            empsdoc.adhar_card = null;
+            empsdoc.pan_card = null;
             Response.Redirect("/employee/index");
             return View();
         }
