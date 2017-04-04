@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AtticagoldDB" Class="CustomerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=AGC003-PC\SQLEXPRESS;Initial Catalog=AtticagoldDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AtticagoldDB" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblCustomers" Member="tblCustomers">
+    <Type Name="tblCustomer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="customer_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="first_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mobile_number" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="alter_mobile_number" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="street" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="permanet_address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="employee_role" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dob" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modifiedat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deletedat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

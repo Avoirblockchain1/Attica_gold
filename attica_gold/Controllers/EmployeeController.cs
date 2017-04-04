@@ -13,7 +13,7 @@ namespace attica_gold.Controllers
 {
     public class EmployeeController : Controller
     {
-        EmployeeTableDataContext db = new EmployeeTableDataContext();
+        EmployeeDataContext db = new EmployeeDataContext();
 
         public ActionResult index()
         {
@@ -40,9 +40,7 @@ namespace attica_gold.Controllers
         [HttpPost]
         public ActionResult store()
         {
-            DateTime thisDay = DateTime.Today;
-            var date = thisDay.ToString("g");
-
+            
             tblEmployee emps = new tblEmployee();
             emps.employee_id = Request["employee_id"];
             emps.first_name = Request["first_name"];
@@ -60,15 +58,29 @@ namespace attica_gold.Controllers
             emps.createdat = null;
             emps.modifiedat = null;
             emps.deletedat = null;
-
+            
             db.tblEmployees.InsertOnSubmit(emps);
             db.SubmitChanges();
+        
 
             tblEmployeeDocument empsdoc = new tblEmployeeDocument();
+            empsdoc.employee_id = Request["employee_id"];
+            empsdoc.photo = null;
+            empsdoc.adhar_card = null;
+            empsdoc.pan_card = null;
+            db.tblEmployeeDocuments.InsertOnSubmit(empsdoc);
+            db.SubmitChanges();
+
             
-            empsdoc.photo = 
-            empsdoc.adhar_card =
-            empsdoc.pan_card = 
+            tblLogin emplogin = new tblLogin();
+            emplogin.employee_id = Request["employee_id"];
+            emplogin.username = Request["email"];
+            emplogin.user_password = Request["email"];
+            db.tblLogins.InsertOnSubmit(emplogin);
+            db.SubmitChanges();
+
+
+
             Response.Redirect("/employee/index");
             return View();
         }

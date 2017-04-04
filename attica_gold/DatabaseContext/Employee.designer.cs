@@ -23,7 +23,7 @@ namespace attica_gold.DatabaseContext
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AtticagoldDB")]
-	public partial class EmployeeTableDataContext : System.Data.Linq.DataContext
+	public partial class EmployeeDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -33,36 +33,39 @@ namespace attica_gold.DatabaseContext
     partial void InserttblEmployee(tblEmployee instance);
     partial void UpdatetblEmployee(tblEmployee instance);
     partial void DeletetblEmployee(tblEmployee instance);
+    partial void InserttblLogin(tblLogin instance);
+    partial void UpdatetblLogin(tblLogin instance);
+    partial void DeletetblLogin(tblLogin instance);
     partial void InserttblEmployeeDocument(tblEmployeeDocument instance);
     partial void UpdatetblEmployeeDocument(tblEmployeeDocument instance);
     partial void DeletetblEmployeeDocument(tblEmployeeDocument instance);
     #endregion
 		
-		public EmployeeTableDataContext() : 
+		public EmployeeDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["AtticagoldDB"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public EmployeeTableDataContext(string connection) : 
+		public EmployeeDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public EmployeeTableDataContext(System.Data.IDbConnection connection) : 
+		public EmployeeDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public EmployeeTableDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public EmployeeDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public EmployeeTableDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public EmployeeDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -73,6 +76,14 @@ namespace attica_gold.DatabaseContext
 			get
 			{
 				return this.GetTable<tblEmployee>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblLogin> tblLogins
+		{
+			get
+			{
+				return this.GetTable<tblLogin>();
 			}
 		}
 		
@@ -125,6 +136,8 @@ namespace attica_gold.DatabaseContext
 		
 		private System.Nullable<System.DateTime> _deletedat;
 		
+		private EntitySet<tblLogin> _tblLogins;
+		
 		private EntitySet<tblEmployeeDocument> _tblEmployeeDocuments;
 		
     #region Extensibility Method Definitions
@@ -169,6 +182,7 @@ namespace attica_gold.DatabaseContext
 		
 		public tblEmployee()
 		{
+			this._tblLogins = new EntitySet<tblLogin>(new Action<tblLogin>(this.attach_tblLogins), new Action<tblLogin>(this.detach_tblLogins));
 			this._tblEmployeeDocuments = new EntitySet<tblEmployeeDocument>(new Action<tblEmployeeDocument>(this.attach_tblEmployeeDocuments), new Action<tblEmployeeDocument>(this.detach_tblEmployeeDocuments));
 			OnCreated();
 		}
@@ -513,6 +527,19 @@ namespace attica_gold.DatabaseContext
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployee_tblLogin", Storage="_tblLogins", ThisKey="employee_id", OtherKey="employee_id")]
+		public EntitySet<tblLogin> tblLogins
+		{
+			get
+			{
+				return this._tblLogins;
+			}
+			set
+			{
+				this._tblLogins.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployee_tblEmployeeDocument", Storage="_tblEmployeeDocuments", ThisKey="employee_id", OtherKey="employee_id")]
 		public EntitySet<tblEmployeeDocument> tblEmployeeDocuments
 		{
@@ -546,6 +573,18 @@ namespace attica_gold.DatabaseContext
 			}
 		}
 		
+		private void attach_tblLogins(tblLogin entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblEmployee = this;
+		}
+		
+		private void detach_tblLogins(tblLogin entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblEmployee = null;
+		}
+		
 		private void attach_tblEmployeeDocuments(tblEmployeeDocument entity)
 		{
 			this.SendPropertyChanging();
@@ -556,6 +595,253 @@ namespace attica_gold.DatabaseContext
 		{
 			this.SendPropertyChanging();
 			entity.tblEmployee = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblLogin")]
+	public partial class tblLogin : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _username;
+		
+		private string _user_password;
+		
+		private string _employee_id;
+		
+		private System.Nullable<System.DateTime> _createdat;
+		
+		private System.Nullable<System.DateTime> _modifiedat;
+		
+		private System.Nullable<System.DateTime> _deletedat;
+		
+		private EntityRef<tblEmployee> _tblEmployee;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void Onuser_passwordChanging(string value);
+    partial void Onuser_passwordChanged();
+    partial void Onemployee_idChanging(string value);
+    partial void Onemployee_idChanged();
+    partial void OncreatedatChanging(System.Nullable<System.DateTime> value);
+    partial void OncreatedatChanged();
+    partial void OnmodifiedatChanging(System.Nullable<System.DateTime> value);
+    partial void OnmodifiedatChanged();
+    partial void OndeletedatChanging(System.Nullable<System.DateTime> value);
+    partial void OndeletedatChanged();
+    #endregion
+		
+		public tblLogin()
+		{
+			this._tblEmployee = default(EntityRef<tblEmployee>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(50)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_password", DbType="NVarChar(50)")]
+		public string user_password
+		{
+			get
+			{
+				return this._user_password;
+			}
+			set
+			{
+				if ((this._user_password != value))
+				{
+					this.Onuser_passwordChanging(value);
+					this.SendPropertyChanging();
+					this._user_password = value;
+					this.SendPropertyChanged("user_password");
+					this.Onuser_passwordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="NVarChar(50)")]
+		public string employee_id
+		{
+			get
+			{
+				return this._employee_id;
+			}
+			set
+			{
+				if ((this._employee_id != value))
+				{
+					if (this._tblEmployee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onemployee_idChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id = value;
+					this.SendPropertyChanged("employee_id");
+					this.Onemployee_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createdat", DbType="DateTime")]
+		public System.Nullable<System.DateTime> createdat
+		{
+			get
+			{
+				return this._createdat;
+			}
+			set
+			{
+				if ((this._createdat != value))
+				{
+					this.OncreatedatChanging(value);
+					this.SendPropertyChanging();
+					this._createdat = value;
+					this.SendPropertyChanged("createdat");
+					this.OncreatedatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modifiedat", DbType="DateTime")]
+		public System.Nullable<System.DateTime> modifiedat
+		{
+			get
+			{
+				return this._modifiedat;
+			}
+			set
+			{
+				if ((this._modifiedat != value))
+				{
+					this.OnmodifiedatChanging(value);
+					this.SendPropertyChanging();
+					this._modifiedat = value;
+					this.SendPropertyChanged("modifiedat");
+					this.OnmodifiedatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deletedat", DbType="DateTime")]
+		public System.Nullable<System.DateTime> deletedat
+		{
+			get
+			{
+				return this._deletedat;
+			}
+			set
+			{
+				if ((this._deletedat != value))
+				{
+					this.OndeletedatChanging(value);
+					this.SendPropertyChanging();
+					this._deletedat = value;
+					this.SendPropertyChanged("deletedat");
+					this.OndeletedatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployee_tblLogin", Storage="_tblEmployee", ThisKey="employee_id", OtherKey="employee_id", IsForeignKey=true)]
+		public tblEmployee tblEmployee
+		{
+			get
+			{
+				return this._tblEmployee.Entity;
+			}
+			set
+			{
+				tblEmployee previousValue = this._tblEmployee.Entity;
+				if (((previousValue != value) 
+							|| (this._tblEmployee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblEmployee.Entity = null;
+						previousValue.tblLogins.Remove(this);
+					}
+					this._tblEmployee.Entity = value;
+					if ((value != null))
+					{
+						value.tblLogins.Add(this);
+						this._employee_id = value.employee_id;
+					}
+					else
+					{
+						this._employee_id = default(string);
+					}
+					this.SendPropertyChanged("tblEmployee");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
