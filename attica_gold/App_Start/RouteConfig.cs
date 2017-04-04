@@ -17,7 +17,11 @@ namespace attica_gold
               name: "ProfileRole",
               url: "profile/{controller}/{action}/{id}"                
           );*/
-
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
 
 
             /*   routes.MapRoute(
@@ -53,70 +57,70 @@ namespace attica_gold
                );
 
           */
-            routes.MapRoute(
-                 name: "appointmnt",
-                 url: "profile/BranchManager/Appointment",
-                   defaults: new { controller = "BranchManager", action = "Appointment" }
-             );
-            routes.MapRoute(
-                name: "newappointmnt",
-                url: "profile/BranchManager/NewAppointment",
-                  defaults: new { controller = "BranchManager", action = "NewAppointment" }
-            );
+            /*   routes.MapRoute(
+                    name: "appointmnt",
+                    url: "profile/BranchManager/Appointment",
+                      defaults: new { controller = "BranchManager", action = "Appointment" }
+                );
+               routes.MapRoute(
+                   name: "newappointmnt",
+                   url: "profile/BranchManager/NewAppointment",
+                     defaults: new { controller = "BranchManager", action = "NewAppointment" }
+               );
 
 
-            routes.MapRoute(
+               routes.MapRoute(
 
-               name: "profilerole",
-               url: "profile/{controller}",
-               defaults: new {  action = "Index" }
-           );
+                  name: "profilerole",
+                  url: "profile/{controller}",
+                  defaults: new {  action = "Index" }
+              );
 
-            routes.MapRoute(
-                 name: "roleitem",
-                 url: "profile/{role}/{controller}",
-                   defaults: new { action = "Index" }
-             );
+               routes.MapRoute(
+                    name: "roleitem",
+                    url: "profile/{role}/{controller}",
+                      defaults: new { action = "Index" }
+                );
 
-            routes.MapRoute(
-                 name: "roleitemlogin",
-                 url: "profile/{role}/{controller}/{action}",
-                   defaults: new {controller="CustomerDeal", action = "Login" }
-             );
-
-            
-
-
-            routes.MapRoute(
-                name: "Default",
-               url: "Login",
-               defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
-           );
-
-
-            routes.MapRoute(
-
-               name: "DefaultV",
-               url: "Login/validate",
-
-               defaults: new { controller = "Login", action = "validate", id = UrlParameter.Optional }
-            );
+               routes.MapRoute(
+                    name: "roleitemlogin",
+                    url: "profile/{role}/{controller}/{action}",
+                      defaults: new {controller="CustomerDeal", action = "Login" }
+                );
 
 
 
 
+               routes.MapRoute(
+                   name: "Defaultlogin",
+                  url: "Login",
+                  defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
+              );
 
-        }
 
-        /*  public class UserNameConstraint : IRouteConstraint
-          {
-              public bool Match(HttpContextBase httpContext, Route route, string parameterName, RouteValueDictionary values, RouteDirection routeDirection)
+               routes.MapRoute(
+
+                  name: "DefaultV",
+                  url: "Login/validate",
+
+                  defaults: new { controller = "Login", action = "validate", id = UrlParameter.Optional }
+               );
+
+
+
+
+
+           }*/
+
+            /*  public class UserNameConstraint : IRouteConstraint
               {
-                  List<string> users = new List<string> { "admin", "branchmn", "cse" };
-                  throw new NotImplementedException();
+                  public bool Match(HttpContextBase httpContext, Route route, string parameterName, RouteValueDictionary values, RouteDirection routeDirection)
+                  {
+                      List<string> users = new List<string> { "admin", "branchmn", "cse" };
+                      throw new NotImplementedException();
+                  }
               }
-          }
-          */
+              */
+        }
     }
-}
- 
+} 

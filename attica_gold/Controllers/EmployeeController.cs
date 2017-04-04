@@ -22,8 +22,8 @@ namespace attica_gold.Controllers
                         select empdata;
             var employees = query.ToList();
 
-           //string json = Newtonsoft.Json.JsonConvert.SerializeObject(employees);
-           //return Content(json);
+          // string json = Newtonsoft.Json.JsonConvert.SerializeObject(employees);
+          // return Content(json);
            
             ViewBag.employeedata = employees;
             return View();

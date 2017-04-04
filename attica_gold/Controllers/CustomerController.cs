@@ -18,11 +18,7 @@ namespace attica_gold.Controllers
         public ActionResult Index()
 
         {
-<<<<<<< HEAD
-           // return Redirect("/profile/cse/Customer/Index");
-      //     Response.Redirect("/profile/cse/Customer/Index");
-=======
-            
+
             var query = from customerdata in customerObject.tblCustomers
                        select customerdata;
             var customers = query.ToList();
@@ -31,7 +27,7 @@ namespace attica_gold.Controllers
           // return Content("samle");
 
             ViewBag.customerdata = customers;
->>>>>>> modifyemployee
+
             return View();
             
         }
