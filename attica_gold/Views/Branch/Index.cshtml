@@ -1,69 +1,53 @@
-﻿
+﻿@model attica_gold.Models.EmployeeModels
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CseLayout.cshtml";
 }
 
-<div class="container">
     <div class="row">
         <div class="col-md-11">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>
+                    
                         Branch Details
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success">Add New Branch</button>
-                        </div>
-
-                    </h3>
-
+                            <button type="button" class="btn btn-success" onclick="window.location.href = '/branch/Create';">Add New Branch</button>
+                        </div>                    
+                       
                 </div>
                 <div class="panel-body">
                     <div>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Branch ID</th>
-                                    <th>Branch Location</th>
-                                    <th>Branch Manager</th>
-                                    <th>Email</th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Contact Number</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach (var item in ViewBag.branchdata)
+                                {
                                 <tr>
-                                    <td>1</td>
-                                    <td>John</td>
-                                    <td>Doe</td>
-                                    <td>john@example.com</td>
+                                    <td>@item.branch_id</td>
+                                    <td>@item.branch_name</td>
+                                    <td>@item.mobile_number</td>
+                                    <td>@item.city</td>
+                                    <td>@item.state</td>
+                                    
+                                   
                                     <td>
-                                        <button type="button" class="btn btn-info">View</button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        <button type="button" class="btn btn-info" onclick="window.location.href = '/branch/show/@item.id';">View</button>
+                                        <button type="button" class="btn btn-warning" onclick="window.location.href = '/branch/edit/@item.id';">Edit</button>
+                                        <button type="button" class="btn btn-danger" onclick="validate(@item.id)">Delete</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Mary</td>
-                                    <td>Moe</td>
-                                    <td>mary@example.com</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info">View</button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>July</td>
-                                    <td>Dooley</td>
-                                    <td>july@example.com</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info">View</button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
+                                }
+                                
                             </tbody>
                         </table>
 
@@ -72,8 +56,15 @@
             </div>
         </div>
     </div>
-    <hr />
 
 
-</div>
+<script>
 
+    function validate(id) 
+    {
+        var result = confirm("Want to delete?");
+        if (result) {
+            window.location.href ="/branch/delete/"+id;
+          }
+    }
+</script>
