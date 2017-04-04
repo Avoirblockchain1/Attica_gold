@@ -16,12 +16,8 @@ namespace attica_gold.Controllers
         CustomerDataContext customerObject = new CustomerDataContext();
         // GET: Customer
         public ActionResult Index()
-
         {
-<<<<<<< HEAD
-           // return Redirect("/profile/cse/Customer/Index");
-      //     Response.Redirect("/profile/cse/Customer/Index");
-=======
+
             
             var query = from customerdata in customerObject.tblCustomers
                        select customerdata;
@@ -31,7 +27,7 @@ namespace attica_gold.Controllers
           // return Content("samle");
 
             ViewBag.customerdata = customers;
->>>>>>> modifyemployee
+
             return View();
             
         }
@@ -58,6 +54,7 @@ namespace attica_gold.Controllers
 
         public ActionResult delete(int id)
         {
+
            var query = (from customerdata in customerObject.tblCustomers
                         where customerdata.id == id
                          select customerdata).Single();
