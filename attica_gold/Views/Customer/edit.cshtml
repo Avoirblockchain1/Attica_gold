@@ -25,52 +25,53 @@
 </style>
 
     <div class="col-lg-12 well">
-        Registration Form
+       Edit Registration Form
     </div>
         <div class="col-lg-12 well">
             <div class="row">
-                <form action="store" method="post">
+                <form action="/customer/update" method="post">
                     <div class="col-sm-12">
                         <div class="row">
                             
                                 <div class="col-sm-10 form-group">
-                                    <label>Customer ID</label>
-                                    <input type="text" placeholder="Enter EmployeeID Name Here.." class="form-control" name="customer_id">
+                                    <label>Employee ID</label>
+                                    <input type="text" placeholder="Enter EmployeeID Name Here.." class="form-control" name="employee_id" value="@ViewBag.customerdata.customer_id" disabled>
+                                    <input type="hidden" name="id" value="@ViewBag.customerdata.id">
                                 </div>
                             </div>
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 <label>First Name</label>
-                                <input type="text" placeholder="Enter First Name Here.." class="form-control" name="first_name">
+                                <input type="text" placeholder="Enter First Name Here.." class="form-control" name="first_name" value="@ViewBag.customerdata.first_name">
                             </div>
                             <div class="col-sm-6 form-group">
                                 <label>Last Name</label>
-                                <input type="text" placeholder="Enter Last Name Here.." class="form-control" name="last_name">
+                                <input type="text" placeholder="Enter Last Name Here.." class="form-control" name="last_name" value="@ViewBag.customerdata.last_name">
                             </div>
                         </div>
                         
                         <div class="row">
                             <div class="col-sm-4 form-group">
                                 <label>Street</label>
-                                <input type="text" placeholder="Enter City Name Here.." class="form-control" name="Street">
+                                <input type="text" placeholder="Enter City Name Here.." class="form-control" name="street" value="@ViewBag.customerdata.street">
                             </div>
                             <div class="col-sm-4 form-group">
                                 <label>City</label>
-                                <input type="text" placeholder="Enter City Name Here.." class="form-control" name="city">
+                                <input type="text" placeholder="Enter City Name Here.." class="form-control" name="city" value="@ViewBag.customerdata.city">
                             </div>
                             <div class="col-sm-4 form-group">
                                 <label>State</label>
-                                <input type="text" placeholder="Enter State Name Here.." class="form-control" name="state">
+                                <input type="text" placeholder="Enter State Name Here.." class="form-control" name="state" value="@ViewBag.customerdata.state">
                             </div>
                             <div class="col-sm-4 form-group">
                                 <label>PIN code</label>
-                                <input type="text" placeholder="Enter Zip Code Here.." class="form-control" name="pin">
+                                <input type="text" placeholder="Enter Zip Code Here.." class="form-control" name="pin" value="@ViewBag.customerdata.pin">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 <label>Email</label>
-                                <input type="text" placeholder="Enter Designation Here.." class="form-control" name="email">
+                                <input type="text" placeholder="Enter Designation Here.." class="form-control" name="email" value="@ViewBag.customerdata.email" disabled>
                             </div>
                             <div class="col-sm-6 form-group">
                                 <label>Gender</label>
@@ -86,16 +87,26 @@
                             <label>Phone Number</label>
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Enter Phone Number Here.." class="form-control" name="phone">
+                                    <input type="text" placeholder="Enter Phone Number Here.." class="form-control" name="phone"  value="@ViewBag.customerdata.mobile_number">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Enter Alternate Phone Number Here.." class="form-control" name="alternate_number">
+                                    <input type="text" placeholder="Enter Alternate Phone Number Here.." class="form-control" name="alternate_number"  value="@ViewBag.customerdata.alter_mobile_number">
                                 </div>
 
                             </div>
-                       
-                       
-                            <button type="submit" class="btn btn-lg btn-info">Submit</button>
+                        <div class="form-group">
+                            <label>Role</label>
+                                <select class="form-control" id="sel1">
+                                    <option value = "manager">Manager</option>
+                                    <option value = "cse">Custmer Support executive</option>
+                                    <option value = "developer">Developer</option>
+                                    <option value = "xyz">Xyz </option>
+                                </select>
+                            
+                        </div>
+                        
+                        <button type="submit" class="btn btn-lg btn-info" >Update</button>
+                    </div>
                 </form>
             </div>
         </div>

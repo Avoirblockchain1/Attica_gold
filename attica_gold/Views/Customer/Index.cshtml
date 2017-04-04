@@ -1,22 +1,19 @@
-﻿
+﻿@model attica_gold.Models.CustomerModels
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CseLayout.cshtml";
 }
 
-<div class="container">
     <div class="row">
         <div class="col-md-11">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>
+                    
                         Customer Details
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success" onclick="window.location.href = 'Customer/Create';">Add New User</button>
+                            <button type="button" class="btn btn-success" onclick="window.location.href = '/customer/Create';">Add New Customer</button>
                         </div>                    
                        
-                    </h3>
-                    
                 </div>
                 <div class="panel-body">
                     <div>
@@ -31,39 +28,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach (var item in ViewBag.customerdata)
+                                {
                                 <tr>
-                                    <td>1</td>
-                                    <td>John</td>
-                                    <td>Doe</td>
-                                    <td>john@example.com</td>
+                                    <td>@item.customer_id</td>
+                                    <td>@item.first_name</td>
+                                    <td>@item.last_name</td>
+                                    <td>@item.email</td>
+                                   
                                     <td>
-                                        <button type="button" class="btn btn-info" onclick="window.location.href = 'Show';">View</button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        <button type="button" class="btn btn-info" onclick="window.location.href = '/customer/show/@item.id';">View</button>
+                                        <button type="button" class="btn btn-warning" onclick="window.location.href = '/customer/edit/@item.id';">Edit</button>
+                                        <button type="button" class="btn btn-danger" onclick="validate(@item.id)">Delete</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Mary</td>
-                                    <td>Moe</td>
-                                    <td>mary@example.com</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info">View</button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>July</td>
-                                    <td>Dooley</td>
-                                    <td>july@example.com</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info">View</button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
+                                }
+                                
                             </tbody>
                         </table>
 
@@ -72,8 +52,15 @@
             </div>
         </div>
     </div>
-    <hr />
-    
-        
-</div>
 
+
+<script>
+
+    function validate(id) 
+    {
+        var result = confirm("Want to delete?");
+        if (result) {
+            window.location.href ="/customer/delete/"+id;
+          }
+    }
+</script>
