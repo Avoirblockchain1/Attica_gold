@@ -16,9 +16,7 @@ namespace attica_gold.Controllers
         CustomerDataContext customerObject = new CustomerDataContext();
         // GET: Customer
         public ActionResult Index()
-
         {
-
             var query = from customerdata in customerObject.tblCustomers
                        select customerdata;
             var customers = query.ToList();
@@ -54,6 +52,7 @@ namespace attica_gold.Controllers
 
         public ActionResult delete(int id)
         {
+
            var query = (from customerdata in customerObject.tblCustomers
                         where customerdata.id == id
                          select customerdata).Single();
