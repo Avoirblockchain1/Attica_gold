@@ -105,7 +105,6 @@ namespace attica_gold.Controllers
                          select branchdata);
             var branchObj = query.FirstOrDefault();
             
-            branchObj.branch_id = Request["branch_id"];
             branchObj.branch_name = Request["branch_name"];
             branchObj.branch_manager_id = Request["branch_manager_id"];
             branchObj.mobile_number = Request["phone"];

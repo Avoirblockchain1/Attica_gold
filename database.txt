@@ -14,7 +14,7 @@ city nvarchar(50) ,
 pin nvarchar(50) ,
 permanet_address nvarchar(100) ,
 employee_role nvarchar(50) ,
-dob data,
+dob datetime,
 createdat datetime,
 modifiedat datetime ,
 deletedat datetime
