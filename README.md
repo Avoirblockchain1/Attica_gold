@@ -1,4 +1,7 @@
+<<<<<<< .merge_file_a03496
 <<<<<<< HEAD
+=======
+>>>>>>> .merge_file_a08088
 #Attica_gold
 #for login
   1. git init
@@ -22,6 +25,10 @@
   2. git checkout -b newbranchname 
   3. git push origin newbranchname
  
+<<<<<<< .merge_file_a03496
 =======
 #sdasdasd Attica_goldsdfasdfasfasdfasd
 >>>>>>> 0887bac9335d01a9aa04d333fe104db45feb6768
+=======
+a
+>>>>>>> .merge_file_a08088
