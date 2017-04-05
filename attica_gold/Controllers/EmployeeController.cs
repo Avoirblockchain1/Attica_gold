@@ -118,15 +118,18 @@ namespace attica_gold.Controllers
             ViewBag.employeedata = employees;
             return View();
         }
-        public ActionResult update()
+        public ActionResult update(int id)
         {
-            int id = Convert.ToInt32(Request["id"]);
+            //int id = Convert.ToInt32(Request["id"]);
          
             var query = (from empdata in db.tblEmployees
                          where empdata.id == id
                          select empdata);
             var employee = query.FirstOrDefault();
-            
+
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(employee);
+            return Content(json);
+            /*
             employee.employee_id = Request["employee_id"];
             employee.first_name = Request["first_name"];
             employee.last_name = Request["last_name"];
@@ -143,10 +146,13 @@ namespace attica_gold.Controllers
             employee.createdat = null;
             employee.modifiedat = null;
             employee.deletedat = null;
-
+            UpdateModel(employee);
             db.SubmitChanges();
+            //db.SaveChanges();
+
             Response.Redirect("/employee/index");
             return View();
+            */
         }
 
     }
