@@ -258,3 +258,49 @@ INSERT INTO [dbo].[tblEmployees]
            ,NULL)
 GO
 
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblLogin]
+           ([username]
+           ,[user_password]
+           ,[employee_id]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('employee1'
+           ,'emp1'
+           ,'emp1'
+           ,NULL
+           ,NULL
+           ,null),
+       ('employee2'
+           ,'emp2'
+           ,'emp2'
+           ,NULL
+           ,NULL
+           ,null),
+       ('employee3'
+           ,'emp3'
+           ,'emp3'
+           ,NULL
+           ,NULL
+           ,null),
+       ('employee4'
+           ,'emp4'
+           ,'emp4'
+           ,NULL
+           ,NULL
+           ,null),
+        ('employee5'
+           ,'emp5'
+           ,'emp5'
+           ,NULL
+           ,NULL
+           ,null)
+   
+
+
+
+GO
