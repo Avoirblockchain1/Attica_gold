@@ -17,7 +17,6 @@ namespace attica_gold.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            
             var query = from customerdata in customerObject.tblCustomers
                        select customerdata;
             var customers = query.ToList();
@@ -26,6 +25,7 @@ namespace attica_gold.Controllers
           // return Content("samle");
 
             ViewBag.customerdata = customers;
+
             return View();
             
         }
@@ -52,6 +52,7 @@ namespace attica_gold.Controllers
 
         public ActionResult delete(int id)
         {
+
            var query = (from customerdata in customerObject.tblCustomers
                         where customerdata.id == id
                          select customerdata).Single();

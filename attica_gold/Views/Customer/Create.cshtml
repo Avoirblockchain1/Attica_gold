@@ -1,7 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "AddCustomer";
-    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+   <!---- ViewBag.Title = "AddCustomer";
+    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";-->
+    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
+    string layout = "";
+
+    layout = "~/Views/Shared/_" + controller + "Layout.cshtml";
+    Layout = layout;
+
 }
 <style>
     body {
