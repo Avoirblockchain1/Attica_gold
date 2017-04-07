@@ -27,6 +27,7 @@ namespace attica_gold.Controllers
         
     public ActionResult Validate()
         {
+
             
             String userName = Request["user_name"];
             String password = Request["password"];
