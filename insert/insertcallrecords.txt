@@ -1,0 +1,120 @@
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCallrecords]
+           ([employee_id]
+           ,[customer_id]
+           ,[timestamp]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp2'
+           ,'cust1'
+           ,'2017/01/12 10:15:00'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCallrecords]
+           ([employee_id]
+           ,[customer_id]
+           ,[timestamp]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp4'
+           ,'cust2'
+           ,'2017/01/12 11:05:00'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCallrecords]
+           ([employee_id]
+           ,[customer_id]
+           ,[timestamp]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp2'
+           ,'cust3'
+           ,'2017/01/05 12:55:00'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCallrecords]
+           ([employee_id]
+           ,[customer_id]
+           ,[timestamp]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp5'
+           ,'cust4'
+           ,'2017/02/05 10:55:00'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCallrecords]
+           ([employee_id]
+           ,[customer_id]
+           ,[timestamp]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp4'
+           ,'cust5'
+           ,'2017/02/03 16:10:00'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCallrecords]
+           ([employee_id]
+           ,[customer_id]
+           ,[timestamp]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp4'
+           ,'cust5'
+           ,'2017/02/03 16:10:00'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+

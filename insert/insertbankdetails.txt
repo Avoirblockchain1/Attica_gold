@@ -1,0 +1,132 @@
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBankDetails]
+           ([employee_id]
+           ,[bank_name]
+           ,[account_number]
+           ,[ifsc_code]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp1'
+           ,'ICICI Bank'
+           ,'7600251956378567'
+           ,'ICI782595'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBankDetails]
+           ([employee_id]
+           ,[bank_name]
+           ,[account_number]
+           ,[ifsc_code]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp2'
+           ,'UNION Bank'
+           ,'8000251956371144'
+           ,'UNI780588'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBankDetails]
+           ([employee_id]
+           ,[bank_name]
+           ,[account_number]
+           ,[ifsc_code]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp3'
+           ,'SBI Bank'
+           ,'7700251956225465'
+           ,'SBI780001'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBankDetails]
+           ([employee_id]
+           ,[bank_name]
+           ,[account_number]
+           ,[ifsc_code]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp4'
+           ,'Axis Bank'
+           ,'5900251956000065'
+           ,'AXI780001'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBankDetails]
+           ([employee_id]
+           ,[bank_name]
+           ,[account_number]
+           ,[ifsc_code]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp5'
+           ,'Axis Bank'
+           ,'5900001274474446'
+           ,'AXI780001'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBankDetails]
+           ([employee_id]
+           ,[bank_name]
+           ,[account_number]
+           ,[ifsc_code]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp6'
+           ,'SBI Bank'
+           ,'6900001274400012'
+           ,'SBI780003'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+

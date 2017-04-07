@@ -1,0 +1,260 @@
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblEmployees]
+           ([employee_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[employee_role]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp1'
+           ,'am'
+           ,'huzaifa'
+           ,'male'
+           ,'966393909'
+           ,'9895656525'
+           ,'amhuzaifa@gmail.com'
+           ,'shivaji nagar'
+           ,'bangalore'
+           ,'karnataka'
+           ,'560047'
+           ,'queen road, shivaji nagar, bangalore'
+           ,'admin'
+           ,1990/05/09
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblEmployees]
+           ([employee_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[employee_role]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp2'
+           ,'anshul'
+           ,'bhai'
+           ,'male'
+           ,'8884055971'
+           ,'9890056525'
+           ,'anshul@gmail.com'
+           ,'bommnahalli'
+           ,'bangalore'
+           ,'karnataka'
+           ,'560045'
+           ,'madiwala, bommanahalli, bangalore'
+           ,'cse'
+           ,1989/01/22
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblEmployees]
+           ([employee_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[employee_role]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp3'
+           ,'anu'
+           ,'radha'
+           ,'female'
+           ,'9071045660'
+           ,'9895056522'
+           ,'anuradha@gmail.com'
+           ,'hebbal'
+           ,'bangalore'
+           ,'karnataka'
+           ,'560041'
+           ,'hebbal, hebbal gate, bangalore'
+           ,'branchmanager'
+           ,1990/08/12
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblEmployees]
+           ([employee_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[employee_role]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp4'
+           ,'sachin'
+           ,'gupta'
+           ,'male'
+           ,'9538614612'
+           ,'989511451'
+           ,'sachingupta@gmail.com'
+           ,'yelahanka'
+           ,'bangalore'
+           ,'karnataka'
+           ,'560040'
+           ,'airport road, yelahanka, bangalore'
+           ,'cse'
+           ,1993/04/10
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblEmployees]
+           ([employee_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[employee_role]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp5'
+           ,'savitha'
+           ,'kamalon'
+           ,'female'
+           ,'9148871898'
+           ,'9495888408'
+           ,'savithakamalon@gmail.com'
+           ,'ejipura'
+           ,'bangalore'
+           ,'karnataka'
+           ,'560048'
+           ,'ejipura, koramangala, bangalore'
+           ,'cse'
+           ,1996/09/04
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblEmployees]
+           ([employee_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[employee_role]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('emp6'
+           ,'nivin'
+           ,'pauly'
+           ,'male'
+           ,'9215474132'
+           ,'9032568520'
+           ,'nivinpauly@gmail.com'
+           ,'aluva'
+           ,'kottayam'
+           ,'kerala'
+           ,'671041'
+           ,'aluva, kottayam, kerala'
+           ,'branchmanager'
+           ,1986/07/17
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+

@@ -1,0 +1,160 @@
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBranches]
+           ([branch_id]
+           ,[branch_name]
+           ,[branch_manager_id]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[street]
+           ,[state]
+           ,[city]
+           ,[pincode]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('branch1'
+           ,'Queens Road'
+           ,'emp3'
+           ,'8011423236'
+           ,'8099877852'
+           ,'shivajinagar'
+           ,'karnadaka'
+           ,'bangalore'
+           ,'560052'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBranches]
+           ([branch_id]
+           ,[branch_name]
+           ,[branch_manager_id]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[street]
+           ,[state]
+           ,[city]
+           ,[pincode]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('branch2'
+           ,'Marathahalli'
+           ,'emp6'
+           ,'8011423444'
+           ,'8099811152'
+           ,'marathahalli'
+           ,'karnadaka'
+           ,'bangalore'
+           ,'560053'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBranches]
+           ([branch_id]
+           ,[branch_name]
+           ,[branch_manager_id]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[street]
+           ,[state]
+           ,[city]
+           ,[pincode]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('branch3'
+           ,'Tumkur'
+           ,'emp3'
+           ,'9895423000'
+           ,'8011811002'
+           ,'BH main road'
+           ,'karnadaka'
+           ,'tumkur'
+           ,'590052'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBranches]
+           ([branch_id]
+           ,[branch_name]
+           ,[branch_manager_id]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[street]
+           ,[state]
+           ,[city]
+           ,[pincode]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('branch4'
+           ,'Mangalore'
+           ,'emp6'
+           ,'9895333000'
+           ,'7011811333'
+           ,'kankanadi'
+           ,'karnadaka'
+           ,'mangalore'
+           ,'590112'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblBranches]
+           ([branch_id]
+           ,[branch_name]
+           ,[branch_manager_id]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[street]
+           ,[state]
+           ,[city]
+           ,[pincode]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('branch5'
+           ,'Thirupur'
+           ,'emp6'
+           ,'9895333000'
+           ,'7011811333'
+           ,'kumaran road'
+           ,'thamilnadu'
+           ,'thirupur'
+           ,'590112'
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+

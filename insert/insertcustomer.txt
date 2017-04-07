@@ -1,0 +1,201 @@
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCustomers]
+           ([customer_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('cust1'
+           ,'sri'
+           ,'ram'
+           ,'male'
+           ,'9501286559'
+           ,'9606545855'
+           ,'sriram@gmail.com'
+           ,'domlur'
+           ,'bangalore'
+           ,'karnadaka'
+           ,'560012'
+           ,'stc bsf campus'
+           ,'2016-09-12'
+           ,null
+           ,null
+           ,null)
+GO
+
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCustomers]
+           ([customer_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('cust2'
+           ,'salman'
+           ,'khan'
+           ,'male'
+           ,'8086451414'
+           ,'8088588996'
+           ,'salmankhan@gmail.com'
+           ,'delhi'
+           ,'delhi'
+           ,'new delhi'
+           ,'470012'
+           ,'agra,delhi,india'
+           ,1880/10/23
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCustomers]
+           ([customer_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('cust3'
+           ,'sonam'
+           ,'kapoor'
+           ,'female'
+           ,'8199285645'
+           ,'9022588977'
+           ,'sonamkapoor@gmail.com'
+           ,'bengal'
+           ,'kolkatte'
+           ,'west bengal'
+           ,'400028'
+           ,'bengal, kolkkatta, west bengal'
+           ,1885/02/03
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCustomers]
+           ([customer_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('cust4'
+           ,'nayan'
+           ,'thara'
+           ,'female'
+           ,'9011411232'
+           ,'7011946698'
+           ,'nayanthara@gmail.com'
+           ,'kochi'
+           ,'eranakulam'
+           ,'kerala'
+           ,'671316'
+           ,'kochi, eranakulam, kerala'
+           ,1886/08/08
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
+USE [AtticagoldDB]
+GO
+
+INSERT INTO [dbo].[tblCustomers]
+           ([customer_id]
+           ,[first_name]
+           ,[last_name]
+           ,[gender]
+           ,[mobile_number]
+           ,[alter_mobile_number]
+           ,[email]
+           ,[street]
+           ,[city]
+           ,[state]
+           ,[pin]
+           ,[permanet_address]
+           ,[dob]
+           ,[createdat]
+           ,[modifiedat]
+           ,[deletedat])
+     VALUES
+           ('cust5'
+           ,'vinu'
+           ,'raj'
+           ,'male'
+           ,'7011411002'
+           ,'7019911198'
+           ,'vinuraj@gmail.com'
+           ,'chennai'
+           ,'chennai'
+           ,'thamilnadu'
+           ,'604500'
+           ,'selam, chennai, thamilnadu'
+           ,1995/01/02
+           ,NULL
+           ,NULL
+           ,NULL)
+GO
+
+
