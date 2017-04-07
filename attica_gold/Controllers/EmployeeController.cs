@@ -71,13 +71,13 @@ namespace attica_gold.Controllers
             db.tblEmployeeDocuments.InsertOnSubmit(empsdoc);
             db.SubmitChanges();
 
-            LoginDataContext loginContext = new LoginDataContext();
+            
             tblLogin emplogin = new tblLogin();
             emplogin.employee_id = Request["employee_id"];
             emplogin.username = Request["email"];
             emplogin.user_password = Request["email"];
-            loginContext.tblLogins.InsertOnSubmit(emplogin);
-            loginContext.SubmitChanges();
+            db.tblLogins.InsertOnSubmit(emplogin);
+            db.SubmitChanges();
 
 
 

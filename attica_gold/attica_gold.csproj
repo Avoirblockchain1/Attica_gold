@@ -234,11 +234,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Employee.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseContext\Login.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Login.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -291,11 +286,6 @@
     <Content Include="DatabaseContext\Branch.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Branch.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="DatabaseContext\Login.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Login.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -412,11 +402,6 @@
   <ItemGroup>
     <None Include="DatabaseContext\Branch.dbml.layout">
       <DependentUpon>Branch.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DatabaseContext\Login.dbml.layout">
-      <DependentUpon>Login.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
