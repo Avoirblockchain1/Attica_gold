@@ -45,7 +45,7 @@ namespace attica_gold.Controllers
                          select new {
                              logintable.employee_id,
                              employee.employee_role,
-                         }).First();
+                         }).FirstOrDefault(); 
 
 
 
