@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.SqlClient;
+using System.Data.Sql;
+using attica_gold.DatabaseContext;
+
 
 namespace attica_gold.Controllers
 {
@@ -23,6 +27,33 @@ namespace attica_gold.Controllers
         
     public ActionResult Validate()
         {
+
+            
+            String userName = Request["user_name"];
+            String password = Request["password"];
+
+            //var data = new { username = userName, password = password };
+            //return Json(data, JsonRequestBehavior.AllowGet);
+
+            LoginDataContext loginObject = new LoginDataContext();
+            EmployeeDataContext employeeObject = new EmployeeDataContext();
+
+            var login = (from logintable in loginObject.tblLogins
+                         join employee in employeeObject.tblEmployees
+                         on logintable.employee_id equals employee.employee_id
+                         where logintable.username == userName && logintable.user_password == password
+                         select new {
+                             logintable.employee_id,
+                             employee.employee_role,
+                         }).First();
+
+
+
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(login);
+            return Content(json);
+            /*
+            if (String.Equals(userName, "admin") && String.Equals(password, "admin")) {
+                Response.Redirect("/profile/Admin/Index");
             //  string data = TempData.Peek(rolee).ToString();
                       String userName = Request["user_name"];
             String password = Request["password"];
@@ -33,6 +64,7 @@ namespace attica_gold.Controllers
             if (String.Equals(userName, "admin") && String.Equals(password, "admin"))
             {
                 Response.Redirect("/profile/Admin");
+
             }
             else if (String.Equals(userName, "cse") && String.Equals(password, "cse"))
             {
@@ -47,7 +79,7 @@ namespace attica_gold.Controllers
                 Response.Redirect("/Login");
             }
             return Content("Exception Occues");
- 
+            */
         }
     }
 }

@@ -71,13 +71,13 @@ namespace attica_gold.Controllers
             db.tblEmployeeDocuments.InsertOnSubmit(empsdoc);
             db.SubmitChanges();
 
-            
+            LoginDataContext loginContext = new LoginDataContext();
             tblLogin emplogin = new tblLogin();
             emplogin.employee_id = Request["employee_id"];
             emplogin.username = Request["email"];
             emplogin.user_password = Request["email"];
-            db.tblLogins.InsertOnSubmit(emplogin);
-            db.SubmitChanges();
+            loginContext.tblLogins.InsertOnSubmit(emplogin);
+            loginContext.SubmitChanges();
 
 
 
@@ -89,12 +89,12 @@ namespace attica_gold.Controllers
         {
             var query = (from empdata in db.tblEmployees
                          where empdata.id == id
-                         select empdata);
-            var employees = query.FirstOrDefault();
-            ViewBag.employeedata = employees;
+                         select empdata).FirstOrDefault();
+            var employeesdata = query;
+            ViewBag.employeedata = employeesdata;
 
-           //string json = Newtonsoft.Json.JsonConvert.SerializeObject(employees);
-           //return Content(json);
+           //string json = Newtonsoft.Json.JsonConvert.SerializeObject(employeesdata);
+          // return Content(json);
 
             return View();
         }
@@ -104,10 +104,13 @@ namespace attica_gold.Controllers
            var query = (from empdata in db.tblEmployees
                          where empdata.id == id
                          select empdata).Single();
+
+            
             db.tblEmployees.DeleteOnSubmit(query);
             db.SubmitChanges();
             Response.Redirect("/employee/index");
             return View();
+            
         }
         public ActionResult edit(int id)
         {
@@ -127,9 +130,7 @@ namespace attica_gold.Controllers
                          select empdata);
             var employee = query.FirstOrDefault();
 
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(employee);
-            return Content(json);
-            /*
+           
             employee.employee_id = Request["employee_id"];
             employee.first_name = Request["first_name"];
             employee.last_name = Request["last_name"];
@@ -152,7 +153,7 @@ namespace attica_gold.Controllers
 
             Response.Redirect("/employee/index");
             return View();
-            */
+           
         }
 
     }
