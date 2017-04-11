@@ -1,10 +1,7 @@
 ﻿
 @{
-    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
-    string layout = "";
-
-    layout = "~/Views/Shared/_" + controller + "Layout.cshtml";
-    Layout = layout;
+    
+    Layout = "~/Views/Shared/_BranchmanagerLayout.cshtml";
 }
 
 <h2>SubmitForm</h2>

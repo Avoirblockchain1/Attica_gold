@@ -106,8 +106,6 @@ namespace attica_gold.DatabaseContext
 		
 		private string _permanet_address;
 		
-		private string _employee_role;
-		
 		private System.Nullable<System.DateTime> _dob;
 		
 		private System.Nullable<System.DateTime> _createdat;
@@ -146,8 +144,6 @@ namespace attica_gold.DatabaseContext
     partial void OnpinChanged();
     partial void Onpermanet_addressChanging(string value);
     partial void Onpermanet_addressChanged();
-    partial void Onemployee_roleChanging(string value);
-    partial void Onemployee_roleChanged();
     partial void OndobChanging(System.Nullable<System.DateTime> value);
     partial void OndobChanged();
     partial void OncreatedatChanging(System.Nullable<System.DateTime> value);
@@ -419,26 +415,6 @@ namespace attica_gold.DatabaseContext
 					this._permanet_address = value;
 					this.SendPropertyChanged("permanet_address");
 					this.Onpermanet_addressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_role", DbType="NVarChar(50)")]
-		public string employee_role
-		{
-			get
-			{
-				return this._employee_role;
-			}
-			set
-			{
-				if ((this._employee_role != value))
-				{
-					this.Onemployee_roleChanging(value);
-					this.SendPropertyChanging();
-					this._employee_role = value;
-					this.SendPropertyChanged("employee_role");
-					this.Onemployee_roleChanged();
 				}
 			}
 		}

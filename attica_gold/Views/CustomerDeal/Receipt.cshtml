@@ -1,10 +1,6 @@
 ﻿
 @{ 
-    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
-    string layout = "";
-
-    layout = "~/Views/Shared/_" + controller + "Layout.cshtml";
-    Layout = layout;
+    Layout = "~/Views/Shared/_BranchmanagerLayout.cshtml";
 }
 
 <div class="container">
@@ -93,7 +89,7 @@
                     </tbody>
                 </table>
                 <button type="button" class="btn btn-success btn-lg btn-block" onclick="window.location.href='FeedbackForm'">
-                    Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
+                    Pay And Print  <span class="glyphicon glyphicon-chevron-right"></span>
                 </button></td>
             </div>
         </div>

@@ -25,7 +25,6 @@ namespace attica_gold.Models
         public string state { get; set; }
         public string pin { get; set; }
         public string permanet_address { get; set; }
-        public string employee_role { get; set; }
         public string createdat { get; set; }
         public string modifiedat { get; set; }
         public string deletedat { get; set; }

@@ -15,7 +15,6 @@
       <Column Name="state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="pin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="permanet_address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="employee_role" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="dob" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="createdat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="modifiedat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
