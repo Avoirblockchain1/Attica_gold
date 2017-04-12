@@ -41,25 +41,26 @@ namespace attica_gold.Controllers
                          where logintable.username == userName && logintable.user_password == password
                          select employee ).FirstOrDefault();
 
-
-            if (login != null)
+            
+            if (login.employee_role != null)
             {
                 switch (login.employee_role)
                 {
                     case "cse":
                         Response.Redirect("/profile/Cse");
                         break;
-                    case "Branchmanager":
+                    case "branchmanager":
                         Response.Redirect("/profile/Branchmanager");
                         break;
-                    case "Admin":
+                    case "admin":
                         Response.Redirect("/profile/Admin");
                         break;
 
                 }
 
             }
-            else {
+            else
+            {
                 Response.Redirect("/login");
             }
             
