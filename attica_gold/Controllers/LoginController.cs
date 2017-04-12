@@ -39,32 +39,32 @@ namespace attica_gold.Controllers
                          join employee in loginObject.tblEmployees
                          on logintable.employee_id equals employee.employee_id
                          where logintable.username == userName && logintable.user_password == password
-                         select employee ).FirstOrDefault(); 
+                         select employee ).FirstOrDefault();
 
-           
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(login.first_name);
-            return Content(json);
+
+            if (login != null)
+            {
+                switch (login.employee_role)
+                {
+                    case "cse":
+                        Response.Redirect("/profile/Cse");
+                        break;
+                    case "Branchmanager":
+                        Response.Redirect("/profile/Branchmanager");
+                        break;
+                    case "Admin":
+                        Response.Redirect("/profile/Admin");
+                        break;
+
+                }
+
+            }
+            else {
+                Response.Redirect("/login");
+            }
             
-            /*
-            if (String.Equals(userName, "admin") && String.Equals(password, "admin"))
-            {
-                Response.Redirect("/profile/Admin");
-
-            }
-            else if (String.Equals(userName, "cse") && String.Equals(password, "cse"))
-            {
-                Response.Redirect("/profile/Cse");
-            }
-            else if (String.Equals(userName, "branchmanager") && String.Equals(password, "branchmanager"))
-            {
-                Response.Redirect("/profile/BranchManager");
-            }
-            else
-            {
-                Response.Redirect("/Login");
-            }
             return Content("Exception Occues");
-            */
+            
         }
     }
 }
