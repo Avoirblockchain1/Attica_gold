@@ -1,22 +1,11 @@
 ﻿@model attica_gold.Models.EmployeeModels
 @{
-    
-     
-  <!----  if (controller == "BranchManager")
-    {
-        layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
-    }
-    else if (controller == "Cse")
-    {
-        layout = "~/Views/Shared/_CseLayout.cshtml";
-    }
-    else
-    {
-        layout = "~/Views/Shared/_AdminLayout.cshtml";
 
-    }
-      -->
-    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+    var ct = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
+    string layout = "";
+    layout = "~/Views/Shared/_"+ct+"Layout.cshtml";
+
+    Layout =layout;
 
     <!--
  ViewBag.Title = "Index";

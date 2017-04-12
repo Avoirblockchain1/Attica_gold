@@ -1,7 +1,10 @@
 ﻿@model attica_gold.Models.EmployeeModels
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_CseLayout.cshtml";
+    var ct = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
+    string layout = "";
+    layout = "~/Views/Shared/_"+ct+"Layout.cshtml";
+
+    Layout =layout;
 }
 
     <div class="row">
@@ -11,7 +14,8 @@
                     
                         Employee Details
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success" onclick="window.location.href = 'Create';">Add New Employee</button>
+                            <button type="button" class="btn btn-success" onclick="window.location.href = '/Employee/Create';">Add New Employee</button>
+
                         </div>                    
                        
                 </div>

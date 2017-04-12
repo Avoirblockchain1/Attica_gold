@@ -1,7 +1,11 @@
 ﻿
 @{
-    ViewBag.Title = "create";
-    Layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+    var ct = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
+    string layout = "";
+    layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
+
+    Layout = layout;
+
 }
 
 <style>

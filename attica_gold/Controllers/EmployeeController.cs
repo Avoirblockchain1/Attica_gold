@@ -81,7 +81,7 @@ namespace attica_gold.Controllers
 
 
 
-            Response.Redirect("/employee/index");
+            Response.Redirect("/employee");
             return View();
         }
 
@@ -108,7 +108,7 @@ namespace attica_gold.Controllers
             
             db.tblEmployees.DeleteOnSubmit(query);
             db.SubmitChanges();
-            Response.Redirect("/employee/index");
+            Response.Redirect("/employee");
             return View();
             
         }
@@ -151,7 +151,7 @@ namespace attica_gold.Controllers
             db.SubmitChanges();
             //db.SaveChanges();
 
-            Response.Redirect("/employee/index");
+            Response.Redirect("/employee");
             return View();
            
         }
