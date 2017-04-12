@@ -18,6 +18,13 @@ namespace attica_gold
               url: "profile/{controller}/{action}/{id}"                
           );*/
             routes.MapRoute(
+
+                    name: "profilerole",
+                    url: "profile/{controller}",
+                    defaults: new { action = "Index" }
+                );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
@@ -69,12 +76,7 @@ namespace attica_gold
                );
 
 
-               routes.MapRoute(
-
-                  name: "profilerole",
-                  url: "profile/{controller}",
-                  defaults: new {  action = "Index" }
-              );
+               
 
                routes.MapRoute(
                     name: "roleitem",
