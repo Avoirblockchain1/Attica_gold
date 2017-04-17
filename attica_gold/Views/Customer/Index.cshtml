@@ -1,11 +1,7 @@
 ﻿@model attica_gold.Models.CustomerModels
 @{
-
-    var ct = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
-    string layout = "";
-    layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
-
-    Layout = layout;
+    
+    Layout = ViewBag.layout;
 
 
 }
@@ -17,7 +13,7 @@
                     
                         Customer Details
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success" onclick="window.location.href = '/customer/Create';">Add New Customer</button>
+                            <button type="button" class="btn btn-success" onclick="window.location.href = 'Create';">Add New Customer</button>
                         </div>                    
                        
                 </div>
@@ -43,8 +39,8 @@
                                     <td>@item.email</td>
                                    
                                     <td>
-                                        <button type="button" class="btn btn-info" onclick="window.location.href = '/customer/show/@item.id';">View</button>
-                                        <button type="button" class="btn btn-warning" onclick="window.location.href = '/customer/edit/@item.id';">Edit</button>
+                                        <button type="button" class="btn btn-info" onclick="window.location.href = 'Customer/show/@item.id';">View</button>
+                                        <button type="button" class="btn btn-warning" onclick="window.location.href = 'Customer/edit/@item.id';">Edit</button>
                                         <button type="button" class="btn btn-danger" onclick="validate(@item.id)">Delete</button>
                                     </td>
                                 </tr>
@@ -66,7 +62,7 @@
     {
         var result = confirm("Want to delete?");
         if (result) {
-            window.location.href ="/customer/delete/"+id;
+            window.location.href ="customer/delete/"+id;
           }
     }
 </script>

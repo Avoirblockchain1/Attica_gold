@@ -1,11 +1,5 @@
-﻿
-@{
-    var ct = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
-    string layout = "";
-    layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
-
-    Layout = layout;
-
+﻿@{  
+    Layout = ViewBag.layout;
 }
 <style>
     body {
@@ -33,7 +27,7 @@
     </div>
         <div class="col-lg-12 well">
             <div class="row">
-                <form action="/customer/update" method="post">
+                <form action="customer/update" method="post">
                     <div class="col-sm-12">
                         <div class="row">
                             

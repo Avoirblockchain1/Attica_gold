@@ -25,6 +25,7 @@ namespace attica_gold
                 url: "profile/BranchManager/NewAppointment",
                   defaults: new { controller = "BranchManager", action = "NewAppointment" }
             );
+            
             routes.MapRoute(
                 name: "empindex",
                 url: "profile/{role}/Employee",
@@ -37,27 +38,32 @@ namespace attica_gold
                   defaults: new { controller = "Employee" }
             );
 
-          
-
+           
+            //open profile 
             routes.MapRoute(
 
                name: "profilerole",
                url: "profile/{controller}",
                defaults: new { action = "Index" }
            );
-
+            //open module like branch, customer, employee
             routes.MapRoute(
                  name: "roleitem",
                  url: "profile/{role}/{controller}",
                    defaults: new { action = "Index" }
              );
 
+           
             routes.MapRoute(
-                 name: "roleitemlogin",
-                 url: "profile/{role}/{controller}/{action}",
-                   defaults: new { controller = "CustomerDeal", action = "Login" }
-             );
-
+                name: "create",
+                url: "profile/{role}/{controller}/{action}/{id}",
+                  defaults: new { action = "create", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "roleitemlogin",
+                url: "profile/{role}/CustomerDeal/{action}",
+                  defaults: new { controller = "CustomerDeal", action = "Login" }
+            );
 
             routes.MapRoute(
                 name: "Defaultlogin",

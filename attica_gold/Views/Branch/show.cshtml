@@ -1,11 +1,7 @@
 ﻿
 @{
 
-    var ct = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
-    string layout = "";
-    layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
-
-    Layout = layout;
+    Layout = ViewBag.layout;
 
 }
 

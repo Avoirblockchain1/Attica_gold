@@ -13,10 +13,15 @@ namespace attica_gold.Controllers
 {
     public class CustomerController : Controller
     {
+
         CustomerDataContext customerObject = new CustomerDataContext();
         // GET: Customer
         public ActionResult Index()
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             var query = from customerdata in customerObject.tblCustomers
                        select customerdata;
             var customers = query.ToList();
@@ -31,6 +36,10 @@ namespace attica_gold.Controllers
         }
         public ActionResult show(int id)
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             var query = (from customerdata in customerObject.tblCustomers
                          where customerdata.id == id
                          select customerdata);
@@ -46,24 +55,35 @@ namespace attica_gold.Controllers
 
         public ActionResult Create()
         {
-            
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             return View();
         }
 
         public ActionResult delete(int id)
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
 
-           var query = (from customerdata in customerObject.tblCustomers
+            var query = (from customerdata in customerObject.tblCustomers
                         where customerdata.id == id
                          select customerdata).Single();
             customerObject.tblCustomers.DeleteOnSubmit(query);
             customerObject.SubmitChanges();
-            Response.Redirect("/customer/index");
+            var redirectUrl = "/profile/" + role + "/customer/index";
+            Response.Redirect(redirectUrl);
             return View();
         }
 
         public ActionResult edit(int id)
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             var query = (from customerdata in customerObject.tblCustomers
                          where customerdata.id == id
                         select customerdata);
@@ -75,7 +95,10 @@ namespace attica_gold.Controllers
         [HttpPost]
         public ActionResult store()
         {
-            
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             tblCustomer tblObj = new tblCustomer();
             tblObj.customer_id = Request["customer_id"];
             tblObj.first_name = Request["first_name"];
@@ -97,12 +120,17 @@ namespace attica_gold.Controllers
             customerObject.tblCustomers.InsertOnSubmit(tblObj);
             customerObject.SubmitChanges();
 
-            Response.Redirect("/customer/index");
+            var redirectUrl = "/profile/" + role + "/customer/index";
+            Response.Redirect(redirectUrl);
             return View();
         }
 
         public ActionResult update()
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             int id = Convert.ToInt32(Request["id"]);
          
            var query = (from customerdata in customerObject.tblCustomers
@@ -127,7 +155,8 @@ namespace attica_gold.Controllers
             customer.deletedat = null;
             
             customerObject.SubmitChanges();
-            Response.Redirect("/customer/index");
+            var redirectUrl = "/profile/" + role + "/customer/index";
+            Response.Redirect(redirectUrl);
             return View();
         }
        
