@@ -1,19 +1,33 @@
-﻿using System;
+﻿using attica_gold.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
+<<<<<<< HEAD
 using System.Data.Sql;
 using attica_gold.DatabaseContext;
+=======
+>>>>>>> 62f045474f010d01ca0e61cecab0bafa36a1d959
 
 namespace attica_gold.Controllers
 {
     public class BranchController : Controller
     {
         BranchDataContext branchObject = new BranchDataContext();
-
-        public ActionResult index()
+        // GET: Branch
+        AtticagoldDB db = new AtticagoldDB();
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult create()
+        { 
+               return View();
+        }
+        [HttpPost]
+        public ActionResult show()
         {
             //return Content("index page");
             var query = from branchdata in branchObject.tblBranches
@@ -25,9 +39,6 @@ namespace attica_gold.Controllers
            
             ViewBag.branchdata = branches;
             return View();
-
-
-
         }
         [HttpGet]
         public ActionResult create()
@@ -123,4 +134,5 @@ namespace attica_gold.Controllers
         }
 
     }
+  
 }
