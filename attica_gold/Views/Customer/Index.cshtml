@@ -13,8 +13,12 @@
                     
                         Customer Details
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success" onclick="window.location.href = 'Create';">Add New Customer</button>
-                        </div>                    
+                           
+                            @if (ViewBag.role != "cse")
+                            {
+                             <button type="button" class="btn btn-success" onclick="window.location.href = 'Customer/Create';">Add New Customer</button>
+                            }
+                          </div>                    
                        
                 </div>
                 <div class="panel-body">
@@ -37,12 +41,22 @@
                                     <td>@item.first_name</td>
                                     <td>@item.last_name</td>
                                     <td>@item.email</td>
-                                   
-                                    <td>
-                                        <button type="button" class="btn btn-info" onclick="window.location.href = 'Customer/show/@item.id';">View</button>
-                                        <button type="button" class="btn btn-warning" onclick="window.location.href = 'Customer/edit/@item.id';">Edit</button>
-                                        <button type="button" class="btn btn-danger" onclick="validate(@item.id)">Delete</button>
-                                    </td>
+                                  
+                                    @if (ViewBag.role == "cse")
+                                    {
+                                        <td>
+                                            <button type="button" class="btn btn-info" onclick="window.location.href = 'Customer/show/@item.id';">View</button>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <button type="button" class="btn btn-info" onclick="window.location.href = 'Customer/show/@item.id';">View</button>
+                                            <button type="button" class="btn btn-warning" onclick="window.location.href = 'Customer/edit/@item.id';">Edit</button>
+                                            <button type="button" class="btn btn-danger" onclick="validate(@item.id)">Delete</button>
+                                        </td>
+                                    }
+                                  
                                 </tr>
                                 }
                                 
@@ -62,7 +76,7 @@
     {
         var result = confirm("Want to delete?");
         if (result) {
-            window.location.href ="customer/delete/"+id;
+            window.location.href ="delete/"+id;
           }
     }
 </script>

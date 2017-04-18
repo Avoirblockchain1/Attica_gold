@@ -13,8 +13,12 @@ namespace attica_gold
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+             name: "roleitemlogin",
+             url: "profile/{role}/CustomerDeal/{action}",
+               defaults: new { controller = "CustomerDeal", action = "Login" }
+         );
 
-          
             routes.MapRoute(
                    name: "appointmnt",
                    url: "profile/BranchManager/Appointment",
@@ -25,7 +29,9 @@ namespace attica_gold
                 url: "profile/BranchManager/NewAppointment",
                   defaults: new { controller = "BranchManager", action = "NewAppointment" }
             );
-            
+
+           
+
             routes.MapRoute(
                 name: "empindex",
                 url: "profile/{role}/Employee",
@@ -59,11 +65,7 @@ namespace attica_gold
                 url: "profile/{role}/{controller}/{action}/{id}",
                   defaults: new { action = "create", id = UrlParameter.Optional }
             );
-            routes.MapRoute(
-                name: "roleitemlogin",
-                url: "profile/{role}/CustomerDeal/{action}",
-                  defaults: new { controller = "CustomerDeal", action = "Login" }
-            );
+          
 
             routes.MapRoute(
                 name: "Defaultlogin",
