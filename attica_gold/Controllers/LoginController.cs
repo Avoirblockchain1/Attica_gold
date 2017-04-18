@@ -17,11 +17,11 @@ namespace attica_gold.Controllers
         public ActionResult Index()
         {
             //string rolee = RouteData.Values["role"].ToString();
-           // Console.WriteLine(rolee);
-          //  string data = TempData[rolee].ToString();
-          //  TempData.Keep(rolee); // above like is mandatory
+            // Console.WriteLine(rolee);
+            //  string data = TempData[rolee].ToString();
+            //  TempData.Keep(rolee); // above like is mandatory
 
-           // return RedirectToAction("Validate", rolee);
+            // return RedirectToAction("Validate", rolee);
             return View();
         }
         
