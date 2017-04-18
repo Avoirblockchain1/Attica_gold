@@ -11,6 +11,7 @@ namespace attica_gold.Controllers
         // GET: Cse
         public ActionResult Index()
         {
+            ViewBag.layout = "~/Views/Shared/_CseLayout.cshtml";
             return View();
         }
     }

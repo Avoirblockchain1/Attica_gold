@@ -14,15 +14,19 @@ namespace attica_gold.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
+
             //   return Redirect(userName+"/Index");
             return View();
         }
         public ActionResult Appointment()
         {
+            ViewBag.layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
             return View();
         }
         public ActionResult NewAppointment()
         {
+            ViewBag.layout = "~/Views/Shared/_BranchManagerLayout.cshtml";
             return View();
         }
 

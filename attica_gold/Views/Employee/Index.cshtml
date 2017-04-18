@@ -1,10 +1,9 @@
-﻿@model attica_gold.Models.EmployeeModels
+﻿
 @{
-    var ct = HttpContext.Current.Request.RequestContext.RouteData.Values["role"].ToString();
-    string layout = "";
-    layout = "~/Views/Shared/_"+ct+"Layout.cshtml";
 
-    Layout =layout;
+    Layout = ViewBag.layout;
+
+
 }
 
     <div class="row">
@@ -14,7 +13,7 @@
                     
                         Employee Details
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success" onclick="window.location.href = '/Employee/Create';">Add New Employee</button>
+                            <button type="button" class="btn btn-success" onclick="window.location.href = 'Employee/Create';">Add New Employee</button>
 
                         </div>                    
                        
@@ -28,7 +27,7 @@
                                     <th>Firstname</th>
                                     <th>Lastname</th>
                                     <th>Email</th>
-                                    <th>Action</th>
+                                    <th>@ViewBag.layout;</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,8 +40,8 @@
                                     <td>@item.email</td>
                                    
                                     <td>
-                                        <button type="button" class="btn btn-info" onclick="window.location.href = '/employee/show/@item.id';">View</button>
-                                        <button type="button" class="btn btn-warning" onclick="window.location.href = '/employee/edit/@item.id';">Edit</button>
+                                        <button type="button" class="btn btn-info" onclick="window.location.href = 'employee/show/@item.id';">View</button>
+                                        <button type="button" class="btn btn-warning" onclick="window.location.href = 'employee/edit/@item.id';">Edit</button>
                                         <button type="button" class="btn btn-danger" onclick="validate(@item.id)">Delete</button>
                                     </td>
                                 </tr>
@@ -64,7 +63,7 @@
     {
         var result = confirm("Want to delete?");
         if (result) {
-            window.location.href ="/employee/delete/"+id;
+            window.location.href ="employee/delete/"+id;
           }
     }
 </script>

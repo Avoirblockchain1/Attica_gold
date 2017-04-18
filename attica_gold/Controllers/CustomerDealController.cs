@@ -16,28 +16,46 @@ namespace attica_gold.Controllers
         // GET: CustomerDeal
         public ActionResult Login()
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             return View();
         }
         //OTPValidation
         public ActionResult OTPValidation()
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             return View();
         }
         //DocumentSubmit
         public ActionResult DocumentSubmit()
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             return View();
         }
         public ActionResult SubmitForm()
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             return View();
         }
         public ActionResult Receipt()
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             return View();
         }
         public ActionResult FeedbackForm()
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             return View();
         }
     }

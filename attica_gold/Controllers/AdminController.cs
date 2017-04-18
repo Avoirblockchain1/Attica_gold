@@ -11,6 +11,7 @@ namespace attica_gold.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            ViewBag.layout = "~/Views/Shared/_AdminLayout.cshtml";
             return View();
         }
 

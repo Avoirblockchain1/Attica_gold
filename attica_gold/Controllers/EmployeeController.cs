@@ -18,6 +18,11 @@ namespace attica_gold.Controllers
         public ActionResult index()
         {
             //return Content("index page");
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
+            
             var query = from empdata in db.tblEmployees
                         select empdata;
             var employees = query.ToList();
@@ -27,20 +32,25 @@ namespace attica_gold.Controllers
            
             ViewBag.employeedata = employees;
             return View();
-
-
-
+            
         }
         [HttpGet]
         public ActionResult create()
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             return View();
         }
 
         [HttpPost]
         public ActionResult store()
         {
-            
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             tblEmployee emps = new tblEmployee();
             emps.employee_id = Request["employee_id"];
             emps.first_name = Request["first_name"];
@@ -81,12 +91,17 @@ namespace attica_gold.Controllers
 
 
 
-            Response.Redirect("/employee");
+            var redirectUrl = "/profile/" + role + "/employee/index";
+            Response.Redirect(redirectUrl);
             return View();
         }
 
         public ActionResult show(int id)
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             var query = (from empdata in db.tblEmployees
                          where empdata.id == id
                          select empdata).FirstOrDefault();
@@ -101,19 +116,28 @@ namespace attica_gold.Controllers
 
         public ActionResult delete(int id)
         {
-           var query = (from empdata in db.tblEmployees
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
+            var query = (from empdata in db.tblEmployees
                          where empdata.id == id
                          select empdata).Single();
 
             
             db.tblEmployees.DeleteOnSubmit(query);
             db.SubmitChanges();
-            Response.Redirect("/employee");
+            var redirectUrl = "/profile/" + role + "/employee/index";
+            Response.Redirect(redirectUrl);
             return View();
             
         }
         public ActionResult edit(int id)
         {
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             var query = (from empdata in db.tblEmployees
                          where empdata.id == id
                          select empdata);
@@ -124,7 +148,10 @@ namespace attica_gold.Controllers
         public ActionResult update(int id)
         {
             //int id = Convert.ToInt32(Request["id"]);
-         
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
+
             var query = (from empdata in db.tblEmployees
                          where empdata.id == id
                          select empdata);
@@ -151,7 +178,8 @@ namespace attica_gold.Controllers
             db.SubmitChanges();
             //db.SaveChanges();
 
-            Response.Redirect("/employee");
+            var redirectUrl = "/profile/" + role + "/employee/index";
+            Response.Redirect(redirectUrl);
             return View();
            
         }
