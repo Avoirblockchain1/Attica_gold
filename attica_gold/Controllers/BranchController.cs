@@ -17,9 +17,9 @@ namespace attica_gold.Controllers
         // GET: Branch
         public ActionResult Index()
         {
-            var ct = RouteData.Values["role"].ToString();
-            ViewBag.ct = ct;
-            ViewBag.layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             var query = from branchdata in branchObject.tblBranches
                         select branchdata;
             var branches = query.ToList();
@@ -33,18 +33,18 @@ namespace attica_gold.Controllers
         }
         public ActionResult create()
         {
-            var ct = RouteData.Values["role"].ToString();
-            ViewBag.ct = ct;
-            ViewBag.layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
          
             return View();
         }
         [HttpPost]
         public ActionResult show()
         {
-            var ct = RouteData.Values["role"].ToString();
-            ViewBag.ct = ct;
-            ViewBag.layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role+ "Layout.cshtml";
             //return Content("index page");
             var query = from branchdata in branchObject.tblBranches
                         select branchdata;
@@ -59,9 +59,9 @@ namespace attica_gold.Controllers
 
         public ActionResult show(int id)
         {
-            var ct = RouteData.Values["role"].ToString();
-            ViewBag.ct = ct;
-            ViewBag.layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             var query = (from branchdata in branchObject.tblBranches
                          where branchdata.id == id
                          select branchdata);
@@ -78,9 +78,9 @@ namespace attica_gold.Controllers
         [HttpPost]
         public ActionResult store()
         {
-            var ct = RouteData.Values["role"].ToString();
-            ViewBag.ct = ct;
-            ViewBag.layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             
             tblBranch branchObj = new tblBranch();
             branchObj.branch_id = Request["branch_id"];
@@ -98,7 +98,7 @@ namespace attica_gold.Controllers
 
             branchObject.tblBranches.InsertOnSubmit(branchObj);
             branchObject.SubmitChanges();
-            var redirectUrl = "/profile/" +ct +"/branch/index";
+            var redirectUrl = "/profile/" +role +"/branch/index";
             Response.Redirect(redirectUrl);
             return View();
             
@@ -108,23 +108,23 @@ namespace attica_gold.Controllers
 
         public ActionResult delete(int id)
         {
-            var ct = RouteData.Values["role"].ToString();
-            ViewBag.ct = ct;
-            ViewBag.layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.role = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             var query = (from branchdata in branchObject.tblBranches
                          where branchdata.id == id
                          select branchdata).Single();
             branchObject.tblBranches.DeleteOnSubmit(query);
             branchObject.SubmitChanges();
-            var redirectUrl = "/profile/" + ct + "/branch/index";
+            var redirectUrl = "/profile/" + role + "/branch/index";
             Response.Redirect(redirectUrl);
             return View();
         }
         public ActionResult edit(int id)
         {
-            var ct = RouteData.Values["role"].ToString();
-            ViewBag.ct = ct;
-            ViewBag.layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.ct = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             var query = (from branchdata in branchObject.tblBranches
                          where branchdata.id == id
                          select branchdata);
@@ -134,9 +134,9 @@ namespace attica_gold.Controllers
         }
         public ActionResult update()
         {
-            var ct = RouteData.Values["role"].ToString();
-            ViewBag.ct = ct;
-            ViewBag.layout = "~/Views/Shared/_" + ct + "Layout.cshtml";
+            var role = RouteData.Values["role"].ToString();
+            ViewBag.ct = role;
+            ViewBag.layout = "~/Views/Shared/_" + role + "Layout.cshtml";
             int id = Convert.ToInt32(Request["id"]);
          
             var query = (from branchdata in branchObject.tblBranches
@@ -157,7 +157,7 @@ namespace attica_gold.Controllers
             branchObj.deletedat = null;
 
             branchObject.SubmitChanges();
-            var redirectUrl = "/profile/" + ct + "/branch/index";
+            var redirectUrl = "/profile/" + role + "/branch/index";
             Response.Redirect(redirectUrl);
             return View();
         }

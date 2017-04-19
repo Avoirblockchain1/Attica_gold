@@ -21,8 +21,11 @@
                 <div class="panel-heading">
                         Branch Details
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success" onclick="window.location.href = '/profile/@ViewBag.ct/branch/Create';">Add New Branch</button>
-                        </div>                    
+                          @if (ViewBag.role != "cse" || "BranchManager")
+                          {
+
+                            <button type="button" class="btn btn-success" onclick="window.location.href = '/profile/@ViewBag.role/branch/Create';">Add New Branch</button>
+                          } </div>                    
                 </div>
                 <div class="panel-body">
                     <div>
@@ -48,12 +51,33 @@
                                     <td>@item.city</td>
                                     <td>@item.state</td>
                                     
-                                   
+                                 @if ((ViewBag.role == "cse" )|| (ViewBag.role=="branchmanager"))
+                                 {
                                     <td>
-                                        <button type="button" class="btn btn-info" onclick="window.location.href = '/profile/@ViewBag.ct/branch/show/@item.id';">View</button>
-                                        <button type="button" class="btn btn-warning" onclick="window.location.href = '/profile/@ViewBag.ct/branch/edit/@item.id';">Edit</button>
-                                        <button type="button" class="btn btn-danger" onclick="validate(@item.id)">Delete</button>
+
+                                        <button type="button" class="btn btn-info" onclick="window.location.href = '/profile/@ViewBag.role/branch/show/@item.id';">View</button>
                                     </td>
+
+                                 }
+                                 else
+                                 {
+
+
+                                      <td>
+                                          <button type="button" class="btn btn-info" onclick="window.location.href = '/profile/@ViewBag.role/branch/show/@item.id';">View</button>
+                                          <button type="button" class="btn btn-warning" onclick="window.location.href = '/profile/@ViewBag.role/branch/edit/@item.id';">Edit</button>
+                                           <button type="button" class="btn btn-danger" onclick="validate(@item.id)">Delete</button>
+                                   </td>
+                                     
+
+
+                                 } 
+                                    
+               
+                                    
+                                    
+                                    
+                                                           
                                 </tr>
                                 }
                                 
