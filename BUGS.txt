@@ -1,0 +1,31 @@
+Items need to fix
+1. update module in every controller
+2. provide  edit, delete, add for the respective user
+3. authintication 
+4. add images
+5. generate report
+6. cse will assign the branch pin to the lead, for the further details
+7. add remarks and status(start, pending , closed) to every lead, 
+8. no such thing call appoipment
+9. lead will be add with two way( walk-in/crm)
+
+
+
+
+task fixed:-
+
+
+
+
+
+task for everyone
+ asnshul:-
+  1. providing the required buttons on modules page, like cse
+
+ huzafa:-
+  1. fix the update issue in every profile and module,
+  2. reset password
+ savitha:-
+  1. fixing routing everywhere
+  2. 
+
