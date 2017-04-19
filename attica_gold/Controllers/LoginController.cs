@@ -42,7 +42,7 @@ namespace attica_gold.Controllers
                          select employee ).FirstOrDefault();
 
             
-            if (login.employee_role != null)
+            if (login != null)
             {
                 switch (login.employee_role)
                 {
